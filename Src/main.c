@@ -30,12 +30,14 @@
   *
   ******************************************************************************
   */
+
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
 #include "fatfs.h"
 
 /* USER CODE BEGIN Includes */
 
+#include <stdio.h>
 #include "LED.h"
 
 /* USER CODE END Includes */
@@ -84,6 +86,14 @@ static void MX_USART1_UART_Init(void);
 
 /* USER CODE BEGIN 0 */
 
+int fputc(int ch, FILE *f)
+{
+    uint8_t tmp[1];
+    tmp[0] = ch;
+    HAL_UART_Transmit(&huart1,tmp,1,1);
+    return ch;
+}
+
 /* USER CODE END 0 */
 
 int main(void)
@@ -125,7 +135,7 @@ int main(void)
     /* USER CODE BEGIN WHILE */
     while (1)
     {
-
+        
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */
