@@ -1,4 +1,16 @@
+/**
+ * \file LED.c
+ * \author no1wudi
+ */
+
 #include "LED.h"
+
+/**
+ * @ingroup led_module
+ * @brief LED_Show Display a color by LED
+ * @param LED_COLOR Which color to be displayed
+ * @see LED_COLOR
+ */
 
 void LED_Show(uint8_t LED_COLOR)
 {
