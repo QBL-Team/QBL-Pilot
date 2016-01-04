@@ -40,12 +40,12 @@
 
 #define Switch2_Pin GPIO_PIN_2
 #define Switch2_GPIO_Port GPIOE
-#define LED1_Pin GPIO_PIN_3
-#define LED1_GPIO_Port GPIOE
-#define LED2_Pin GPIO_PIN_4
-#define LED2_GPIO_Port GPIOE
-#define LED3_Pin GPIO_PIN_5
-#define LED3_GPIO_Port GPIOE
+#define RED_LED_Pin GPIO_PIN_3
+#define RED_LED_GPIO_Port GPIOE
+#define GREEN_LED_Pin GPIO_PIN_4
+#define GREEN_LED_GPIO_Port GPIOE
+#define BLUE_LED_Pin GPIO_PIN_5
+#define BLUE_LED_GPIO_Port GPIOE
 #define MS5611_CS_Pin GPIO_PIN_9
 #define MS5611_CS_GPIO_Port GPIOE
 #define W25Q16_CS_Pin GPIO_PIN_10
