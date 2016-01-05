@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['led_20driver',['LED Driver',['../group__led__driver.html',1,'']]]
+  ['hmc5883_20driver',['HMC5883 Driver',['../group__hmc5883__driver.html',1,'']]]
 ];

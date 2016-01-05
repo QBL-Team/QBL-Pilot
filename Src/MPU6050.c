@@ -96,12 +96,12 @@ bool MPU6050_Update(float axis[6], float * temp)
         *temp = (int16_t)((tmp[6] << 8) + tmp[7]) / 340.0f + 36.53f;
     }
     
-    axis[0] = (int16_t)((tmp[0] << 8) + tmp[1]);
-    axis[1] = (int16_t)((tmp[2] << 8) + tmp[3]);
-    axis[2] = (int16_t)((tmp[4] << 8) + tmp[5]);
-    axis[3] = (int16_t)((tmp[8] << 8) + tmp[9]);
-    axis[4] = (int16_t)((tmp[10] << 8) + tmp[11]);
-    axis[5] = (int16_t)((tmp[12] << 8) + tmp[13]);
+    axis[0] = (int16_t)((tmp[0] << 8) | tmp[1]);
+    axis[1] = (int16_t)((tmp[2] << 8) | tmp[3]);
+    axis[2] = (int16_t)((tmp[4] << 8) | tmp[5]);
+    axis[3] = (int16_t)((tmp[8] << 8) | tmp[9]);
+    axis[4] = (int16_t)((tmp[10] << 8) | tmp[11]);
+    axis[5] = (int16_t)((tmp[12] << 8) | tmp[13]);
     
     //Acce data normalize ~ x,y,z
     axis[0] /= MPU6050_ACCE_SCALE;

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mpu6050_20driver',['MPU6050 Driver',['../group__mpu6050__driver.html',1,'']]]
+  ['led_20driver',['LED Driver',['../group__led__driver.html',1,'']]]
 ];

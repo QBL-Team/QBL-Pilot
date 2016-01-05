@@ -40,6 +40,7 @@
 #include <stdio.h>
 #include "LED.h"
 #include "MPU6050.h"
+#include "HMC5883.h"
 
 /* USER CODE END Includes */
 
@@ -129,6 +130,7 @@ int main(void)
     /* USER CODE BEGIN 2 */
 
     MPU6050_Init(&hi2c1);
+    HMC5883_Init(&hi2c1);
     LED_Show(LED_COLOR_OFF);
 
     /* USER CODE END 2 */
@@ -137,7 +139,6 @@ int main(void)
     /* USER CODE BEGIN WHILE */
     while (1)
     {
-        
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */

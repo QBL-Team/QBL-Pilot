@@ -461,6 +461,11 @@
               <FileType>1</FileType>
               <FilePath>..\Src\MPU6050.c</FilePath>
             </File>
+            <File>
+              <FileName>HMC5883.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\HMC5883.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
