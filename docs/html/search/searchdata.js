@@ -3,8 +3,8 @@ var indexSectionsWithContent =
   0: "hlm",
   1: "hlm",
   2: "hlm",
-  3: "l",
-  4: "l",
+  3: "lm",
+  4: "lm",
   5: "hlm"
 };
 

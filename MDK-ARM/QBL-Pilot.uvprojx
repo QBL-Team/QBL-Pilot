@@ -373,7 +373,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;   ../Drivers/STM32F4xx_HAL_Driver/Inc;   ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;   ../Drivers/CMSIS/Include;   ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;  ../Middlewares/Third_Party/FatFs/src/drivers;  ../Middlewares/Third_Party/FatFs/src</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Include;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Middlewares/Third_Party/FatFs/src/drivers;../Middlewares/Third_Party/FatFs/src;..\Drivers\Device</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -452,19 +452,39 @@
               <FilePath>../Src/bsp_driver_sd.c</FilePath>
             </File>
             <File>
-              <FileName>LED.c</FileName>
+              <FileName>i2c.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Src\LED.c</FilePath>
+              <FilePath>../Src/i2c.c</FilePath>
             </File>
             <File>
-              <FileName>MPU6050.c</FileName>
+              <FileName>tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Src\MPU6050.c</FilePath>
+              <FilePath>../Src/tim.c</FilePath>
             </File>
             <File>
-              <FileName>HMC5883.c</FileName>
+              <FileName>spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Src\HMC5883.c</FilePath>
+              <FilePath>../Src/spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>sdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/sdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/gpio.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -580,6 +600,31 @@
               <FileName>system_stm32f4xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/Device</GroupName>
+          <Files>
+            <File>
+              <FileName>HMC5883.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Device\HMC5883.c</FilePath>
+            </File>
+            <File>
+              <FileName>LED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Device\LED.c</FilePath>
+            </File>
+            <File>
+              <FileName>MPU6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Device\MPU6050.c</FilePath>
+            </File>
+            <File>
+              <FileName>MS5611.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Device\MS5611.c</FilePath>
             </File>
           </Files>
         </Group>
