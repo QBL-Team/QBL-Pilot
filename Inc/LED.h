@@ -10,13 +10,13 @@
 #include "stm32f4xx_hal.h"
 
 /**
- * @defgroup led_module LED Module
+ * @defgroup led_driver LED Driver
  * @{
  * @}
  */
 
 /**
- * @ingroup led_module
+ * @ingroup led_driver
  * Color description of LED
  */
 

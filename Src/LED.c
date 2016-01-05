@@ -6,7 +6,7 @@
 #include "LED.h"
 
 /**
- * @ingroup led_module
+ * @ingroup led_driver
  * @brief LED_Show Display a color by LED
  * @param LED_COLOR Which color to be displayed
  * @see LED_COLOR

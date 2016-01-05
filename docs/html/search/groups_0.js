@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['led_20module',['LED Module',['../group__led__module.html',1,'']]]
+  ['led_20driver',['LED Driver',['../group__led__driver.html',1,'']]]
 ];

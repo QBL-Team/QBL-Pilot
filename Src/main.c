@@ -39,6 +39,7 @@
 
 #include <stdio.h>
 #include "LED.h"
+#include "MPU6050.h"
 
 /* USER CODE END Includes */
 
@@ -127,6 +128,7 @@ int main(void)
 
     /* USER CODE BEGIN 2 */
 
+    MPU6050_Init(&hi2c1);
     LED_Show(LED_COLOR_OFF);
 
     /* USER CODE END 2 */
