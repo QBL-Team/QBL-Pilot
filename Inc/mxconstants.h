@@ -48,8 +48,8 @@
 #define BLUE_LED_GPIO_Port GPIOE
 #define MS5611_CS_Pin GPIO_PIN_9
 #define MS5611_CS_GPIO_Port GPIOE
-#define W25Q16_CS_Pin GPIO_PIN_10
-#define W25Q16_CS_GPIO_Port GPIOE
+#define W25QXX_CS_Pin GPIO_PIN_10
+#define W25QXX_CS_GPIO_Port GPIOE
 #define Key_Pin GPIO_PIN_0
 #define Key_GPIO_Port GPIOE
 #define Switch1_Pin GPIO_PIN_1

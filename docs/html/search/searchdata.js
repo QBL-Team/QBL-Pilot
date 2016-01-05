@@ -1,11 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "hlm",
-  1: "hlm",
-  2: "hlm",
-  3: "lm",
+  0: "hlmw",
+  1: "hlmw",
+  2: "hlmw",
+  3: "m",
   4: "lm",
-  5: "hlm"
+  5: "lm",
+  6: "hlmw"
 };
 
 var indexSectionNames =
@@ -13,9 +14,10 @@ var indexSectionNames =
   0: "all",
   1: "files",
   2: "functions",
-  3: "enums",
-  4: "enumvalues",
-  5: "groups"
+  3: "variables",
+  4: "enums",
+  5: "enumvalues",
+  6: "groups"
 };
 
 var indexSectionLabels =
@@ -23,8 +25,9 @@ var indexSectionLabels =
   0: "All",
   1: "Files",
   2: "Functions",
-  3: "Enumerations",
-  4: "Enumerator",
-  5: "Modules"
+  3: "Variables",
+  4: "Enumerations",
+  5: "Enumerator",
+  6: "Modules"
 };
 

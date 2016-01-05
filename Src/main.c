@@ -48,6 +48,7 @@
 #include "MS5611.h"
 #include "MPU6050.h"
 #include "HMC5883.h"
+#include "W25QXX.h"
 
 /* USER CODE END Includes */
 
@@ -112,8 +113,12 @@ int main(void)
     MPU6050_Init(&hi2c1);
     HMC5883_Init(&hi2c1);
     MS5611_Init(&hspi2);
+    W25Q_Init(&hspi1);
     LED_Show(LED_COLOR_OFF);
-    
+
+
+
+
     /* USER CODE END 2 */
 
     /* Infinite loop */

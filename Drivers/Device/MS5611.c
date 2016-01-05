@@ -24,16 +24,16 @@
 
 
 
-static const uint8_t MS5611_CMD_RST                    = 0x1E; ///< Command code for reset device
-static const uint8_t MS5611_CMD_CONVERT_D1             = 0x48; ///< Command code for convert pressure with OSR 4096
-static const uint8_t MS5611_CMD_CONVERT_D2             = 0x58; ///< Command code for convert temperature with OSR 4096
-static const uint8_t MS5611_CMD_READ_ADC       = 0x00; ///< Command code for read adc result
-static const uint8_t MS5611_CMD_READ_C1        = 0xA2; ///< Command code for read PROM C1
-static const uint8_t MS5611_CMD_READ_C2        = 0xA4; ///< Command code for read PROM C2
-static const uint8_t MS5611_CMD_READ_C3        = 0xA6; ///< Command code for read PROM C3
-static const uint8_t MS5611_CMD_READ_C4        = 0xA8; ///< Command code for read PROM C4
-static const uint8_t MS5611_CMD_READ_C5        = 0xAA; ///< Command code for read PROM C5
-static const uint8_t MS5611_CMD_READ_C6        = 0xAC; ///< Command code for read PROM C6
+const uint8_t MS5611_CMD_RST[]            = { 0x1E }; ///< Command code for reset device
+const uint8_t MS5611_CMD_CONVERT_D1[]     = { 0x48 }; ///< Command code for convert pressure with OSR 4096
+const uint8_t MS5611_CMD_CONVERT_D2[]     = {0x58}; ///< Command code for convert temperature with OSR 4096
+const uint8_t MS5611_CMD_READ_ADC[]       = {0x00}; ///< Command code for read adc result
+const uint8_t MS5611_CMD_READ_C1[]        = {0xA2}; ///< Command code for read PROM C1
+const uint8_t MS5611_CMD_READ_C2[]        = {0xA4}; ///< Command code for read PROM C2
+const uint8_t MS5611_CMD_READ_C3[]        = {0xA6}; ///< Command code for read PROM C3
+const uint8_t MS5611_CMD_READ_C4[]        = {0xA8}; ///< Command code for read PROM C4
+const uint8_t MS5611_CMD_READ_C5[]        = {0xAA}; ///< Command code for read PROM C5
+const uint8_t MS5611_CMD_READ_C6[]        = {0xAC}; ///< Command code for read PROM C6
 
 
 static uint32_t ms_ticks = 0;   ///<Time stamp for reading operation
@@ -158,7 +158,7 @@ bool MS5611_Init(SPI_HandleTypeDef * handle)
 
     //Reset the chip
 
-    MS5611_SendCMD(&MS5611_CMD_RST);
+    MS5611_SendCMD(MS5611_CMD_RST);
 
     //Wait for chip reset
     HAL_Delay(10);
@@ -166,14 +166,14 @@ bool MS5611_Init(SPI_HandleTypeDef * handle)
 
     //Read PROM
 
-    c1 = MS5611_ReadPROM(&MS5611_CMD_READ_C1); //Dummy read to activate sensor
+    c1 = MS5611_ReadPROM(MS5611_CMD_READ_C1); //Dummy read to activate sensor
 
-    c1 = MS5611_ReadPROM(&MS5611_CMD_READ_C1);
-    c2 = MS5611_ReadPROM(&MS5611_CMD_READ_C2);
-    c3 = MS5611_ReadPROM(&MS5611_CMD_READ_C3);
-    c4 = MS5611_ReadPROM(&MS5611_CMD_READ_C4);
-    c5 = MS5611_ReadPROM(&MS5611_CMD_READ_C5);
-    c6 = MS5611_ReadPROM(&MS5611_CMD_READ_C6);
+    c1 = MS5611_ReadPROM(MS5611_CMD_READ_C1);
+    c2 = MS5611_ReadPROM(MS5611_CMD_READ_C2);
+    c3 = MS5611_ReadPROM(MS5611_CMD_READ_C3);
+    c4 = MS5611_ReadPROM(MS5611_CMD_READ_C4);
+    c5 = MS5611_ReadPROM(MS5611_CMD_READ_C5);
+    c6 = MS5611_ReadPROM(MS5611_CMD_READ_C6);
 
     return true;
 }
@@ -191,7 +191,7 @@ bool MS5611_Update(float * Pressure, float * Temperature)
     switch(ms_state)
     {
     case MS5611_STATE_IDLE:
-        MS5611_SendCMD(&MS5611_CMD_CONVERT_D1);
+        MS5611_SendCMD(MS5611_CMD_CONVERT_D1);
         ms_ticks = HAL_GetTick();
         ms_state = MS5611_STATE_WAIT_FOR_D1;
         return false;
@@ -202,14 +202,14 @@ bool MS5611_Update(float * Pressure, float * Temperature)
         {
             //Read adc result
             MS5611_CS_On();
-            HAL_SPI_Transmit(spi_handle, (void *)&MS5611_CMD_READ_ADC, 1, 1);
+            HAL_SPI_Transmit(spi_handle, (void *)MS5611_CMD_READ_ADC, 1, 1);
             HAL_SPI_Receive(spi_handle, tmp, 3, 1);
             MS5611_CS_Off();
 
             //Conver to normal order
             d1 = (uint32_t)((tmp[0] << 16) | (tmp[1] << 8) | tmp[2]);
 
-            MS5611_SendCMD(&MS5611_CMD_CONVERT_D2);
+            MS5611_SendCMD(MS5611_CMD_CONVERT_D2);
             ms_ticks = HAL_GetTick();
             ms_state = MS5611_STATE_WAIT_FOR_D2;
         }
@@ -229,7 +229,7 @@ bool MS5611_Update(float * Pressure, float * Temperature)
             //Conver to normal order
             d2 = (uint32_t)((tmp[0] << 16) | (tmp[1] << 8) | tmp[2]);
 
-            MS5611_SendCMD(&MS5611_CMD_CONVERT_D1);
+            MS5611_SendCMD((void *)&MS5611_CMD_CONVERT_D1);
             ms_ticks = HAL_GetTick();
             ms_state = MS5611_STATE_WAIT_FOR_D1;
 
@@ -237,7 +237,7 @@ bool MS5611_Update(float * Pressure, float * Temperature)
 
             *Pressure = p / 100.0f;
             *Temperature = temp / 100.0f;
-            
+
             return true;
         }
 

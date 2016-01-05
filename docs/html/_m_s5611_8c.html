@@ -87,7 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">MS5611.c File Reference</div>  </div>
 </div><!--header-->
@@ -125,6 +126,49 @@ Functions</h2></td></tr>
 <tr class="memitem:ga776a0112261b15cd6d234c77152b384a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver.html#ga776a0112261b15cd6d234c77152b384a">MS5611_Update</a> (float *Pressure, float *Temperature)</td></tr>
 <tr class="memdesc:ga776a0112261b15cd6d234c77152b384a"><td class="mdescLeft">&#160;</td><td class="mdescRight">MS5611_Update Try to get newest data from sensor,notice that the conversion need some time,only if this function return true,the data is valid.  <a href="group__ms5611__driver.html#ga776a0112261b15cd6d234c77152b384a">More...</a><br /></td></tr>
 <tr class="separator:ga776a0112261b15cd6d234c77152b384a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gafa5b8ac64374d19d8f1e5d8e2b94b73c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafa5b8ac64374d19d8f1e5d8e2b94b73c"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#gafa5b8ac64374d19d8f1e5d8e2b94b73c">MS5611_CMD_RST</a> [] = { 0x1E }</td></tr>
+<tr class="memdesc:gafa5b8ac64374d19d8f1e5d8e2b94b73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for reset device. <br /></td></tr>
+<tr class="separator:gafa5b8ac64374d19d8f1e5d8e2b94b73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab1acc41277710ab70dc70946ca8e1819"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab1acc41277710ab70dc70946ca8e1819"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#gab1acc41277710ab70dc70946ca8e1819">MS5611_CMD_CONVERT_D1</a> [] = { 0x48 }</td></tr>
+<tr class="memdesc:gab1acc41277710ab70dc70946ca8e1819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for convert pressure with OSR 4096. <br /></td></tr>
+<tr class="separator:gab1acc41277710ab70dc70946ca8e1819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1a9a783b78f3d8b8ab20357243b1d2f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae1a9a783b78f3d8b8ab20357243b1d2f"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#gae1a9a783b78f3d8b8ab20357243b1d2f">MS5611_CMD_CONVERT_D2</a> [] = {0x58}</td></tr>
+<tr class="memdesc:gae1a9a783b78f3d8b8ab20357243b1d2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for convert temperature with OSR 4096. <br /></td></tr>
+<tr class="separator:gae1a9a783b78f3d8b8ab20357243b1d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12183abd8008830f5d763fc8400d414c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga12183abd8008830f5d763fc8400d414c"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga12183abd8008830f5d763fc8400d414c">MS5611_CMD_READ_ADC</a> [] = {0x00}</td></tr>
+<tr class="memdesc:ga12183abd8008830f5d763fc8400d414c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read adc result. <br /></td></tr>
+<tr class="separator:ga12183abd8008830f5d763fc8400d414c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6555aca305c73b423aec8ad7ff75e063"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga6555aca305c73b423aec8ad7ff75e063"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga6555aca305c73b423aec8ad7ff75e063">MS5611_CMD_READ_C1</a> [] = {0xA2}</td></tr>
+<tr class="memdesc:ga6555aca305c73b423aec8ad7ff75e063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C1. <br /></td></tr>
+<tr class="separator:ga6555aca305c73b423aec8ad7ff75e063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga433d78a7f1e4e7c6bea1d15c551f6273"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga433d78a7f1e4e7c6bea1d15c551f6273"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga433d78a7f1e4e7c6bea1d15c551f6273">MS5611_CMD_READ_C2</a> [] = {0xA4}</td></tr>
+<tr class="memdesc:ga433d78a7f1e4e7c6bea1d15c551f6273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C2. <br /></td></tr>
+<tr class="separator:ga433d78a7f1e4e7c6bea1d15c551f6273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fffdcd4e827763dc9344b49a1833f69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga2fffdcd4e827763dc9344b49a1833f69"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga2fffdcd4e827763dc9344b49a1833f69">MS5611_CMD_READ_C3</a> [] = {0xA6}</td></tr>
+<tr class="memdesc:ga2fffdcd4e827763dc9344b49a1833f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C3. <br /></td></tr>
+<tr class="separator:ga2fffdcd4e827763dc9344b49a1833f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90b99ee2918d8d5163654e78ab25738c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga90b99ee2918d8d5163654e78ab25738c"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga90b99ee2918d8d5163654e78ab25738c">MS5611_CMD_READ_C4</a> [] = {0xA8}</td></tr>
+<tr class="memdesc:ga90b99ee2918d8d5163654e78ab25738c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C4. <br /></td></tr>
+<tr class="separator:ga90b99ee2918d8d5163654e78ab25738c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd13f5a06daa45df48f2c61a2f747fb3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafd13f5a06daa45df48f2c61a2f747fb3"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#gafd13f5a06daa45df48f2c61a2f747fb3">MS5611_CMD_READ_C5</a> [] = {0xAA}</td></tr>
+<tr class="memdesc:gafd13f5a06daa45df48f2c61a2f747fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C5. <br /></td></tr>
+<tr class="separator:gafd13f5a06daa45df48f2c61a2f747fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27544c59b693ee1160b49dd80577fedb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga27544c59b693ee1160b49dd80577fedb"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga27544c59b693ee1160b49dd80577fedb">MS5611_CMD_READ_C6</a> [] = {0xAC}</td></tr>
+<tr class="memdesc:ga27544c59b693ee1160b49dd80577fedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C6. <br /></td></tr>
+<tr class="separator:ga27544c59b693ee1160b49dd80577fedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>no1wudi </dd></dl>
