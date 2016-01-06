@@ -49,9 +49,9 @@
 #include "MPU6050.h"
 #include "HMC5883.h"
 #include "W25QXX.h"
+#include "mavlink.h"
 
 /* USER CODE END Includes */
-
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
