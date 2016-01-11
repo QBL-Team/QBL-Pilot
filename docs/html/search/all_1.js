@@ -1,16 +1,13 @@
 var searchData=
 [
-  ['led_2ec',['LED.c',['../_l_e_d_8c.html',1,'']]],
-  ['led_2eh',['LED.h',['../_l_e_d_8h.html',1,'']]],
-  ['led_5fcolor',['LED_COLOR',['../group__led__driver.html#ga1f3289eeddfbcff1515a3786dc0518fa',1,'LED.h']]],
-  ['led_5fcolor_5fblue',['LED_COLOR_BLUE',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faa457a1e8f0680efd8cf6d76d1a6465b2b',1,'LED.h']]],
-  ['led_5fcolor_5fcyan',['LED_COLOR_CYAN',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faa20221062a48820a1e6caabc3fe8c0723',1,'LED.h']]],
-  ['led_5fcolor_5ffuchsin',['LED_COLOR_FUCHSIN',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faa323d8bd5ea675c6701c2945fb2e124bd',1,'LED.h']]],
-  ['led_5fcolor_5fgreen',['LED_COLOR_GREEN',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faa64cda76c497793915fcf24c216d0f37c',1,'LED.h']]],
-  ['led_5fcolor_5foff',['LED_COLOR_OFF',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faafea1b6d1e36efeb9177297ad5b634bdd',1,'LED.h']]],
-  ['led_5fcolor_5fred',['LED_COLOR_RED',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faa20c3f7e3db2eca4ce0fe784975373384',1,'LED.h']]],
-  ['led_5fcolor_5fwhite',['LED_COLOR_WHITE',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faae0568a71373a19d68ac019a67fcb2c3b',1,'LED.h']]],
-  ['led_5fcolor_5fyellow',['LED_COLOR_YELLOW',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faab792f0e1b8644f6f22f3f0ab799bd3a9',1,'LED.h']]],
-  ['led_20driver',['LED Driver',['../group__led__driver.html',1,'']]],
-  ['led_5fshow',['LED_Show',['../group__led__driver.html#gaf96fb94f6dcac6be219eb0019fe3b4ae',1,'LED_Show(uint8_t LED_COLOR):&#160;LED.c'],['../group__led__driver.html#gaf96fb94f6dcac6be219eb0019fe3b4ae',1,'LED_Show(uint8_t LED_COLOR):&#160;LED.c']]]
+  ['hmc5883_2ec',['HMC5883.c',['../_h_m_c5883_8c.html',1,'']]],
+  ['hmc5883_2eh',['HMC5883.h',['../_h_m_c5883_8h.html',1,'']]],
+  ['hmc5883_5fdata_5fsens',['HMC5883_DATA_SENS',['../group__hmc5883__driver.html#ga9c9589bb19e67395e4148d33fcb160e6',1,'HMC5883.c']]],
+  ['hmc5883_20driver',['HMC5883 Driver',['../group__hmc5883__driver.html',1,'']]],
+  ['hmc5883_5fiic_5faddress',['HMC5883_IIC_ADDRESS',['../group__hmc5883__driver.html#ga6887196e8734d548ab7410e96ef5aed4',1,'HMC5883.c']]],
+  ['hmc5883_5finit',['HMC5883_Init',['../group__hmc5883__driver.html#ga3b1955c1ea4d15e35091d2c9b5fc9d45',1,'HMC5883_Init(I2C_HandleTypeDef *handle):&#160;HMC5883.c'],['../group__hmc5883__driver.html#ga3b1955c1ea4d15e35091d2c9b5fc9d45',1,'HMC5883_Init(I2C_HandleTypeDef *handle):&#160;HMC5883.c']]],
+  ['hmc5883_5freg_5faddr_5fwidth',['HMC5883_REG_ADDR_WIDTH',['../group__hmc5883__driver.html#ga3cc59a009a054a25e6b13ccaa227b4ea',1,'HMC5883.c']]],
+  ['hmc5883_5freg_5fdata_5faddr',['HMC5883_REG_DATA_ADDR',['../group__hmc5883__driver.html#ga5af6f3e1f8cb12a7d074b60f6653ee24',1,'HMC5883.c']]],
+  ['hmc5883_5freg_5fdata_5flength',['HMC5883_REG_DATA_LENGTH',['../group__hmc5883__driver.html#ga8480f1a530d25b8e4996d376d51a86d7',1,'HMC5883.c']]],
+  ['hmc5883_5fupdate',['HMC5883_Update',['../group__hmc5883__driver.html#ga510174357ad0bd347beb541bebf7273b',1,'HMC5883_Update(float axis[3]):&#160;HMC5883.c'],['../group__hmc5883__driver.html#ga510174357ad0bd347beb541bebf7273b',1,'HMC5883_Update(float axis[3]):&#160;HMC5883.c']]]
 ];

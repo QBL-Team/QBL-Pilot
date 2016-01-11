@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['w25q_5fcheckforidle',['W25Q_CheckForIdle',['../group__w25qxx__driver.html#gae093638f293862b588ee0b060d346b2f',1,'W25Q_CheckForIdle(void):&#160;W25QXX.c'],['../group__w25qxx__driver.html#gae093638f293862b588ee0b060d346b2f',1,'W25Q_CheckForIdle(void):&#160;W25QXX.c']]],
-  ['w25q_5ferasechp',['W25Q_EraseChp',['../group__w25qxx__driver.html#ga9d7f08f62bd17c0473385558d111f910',1,'W25Q_EraseChp(void):&#160;W25QXX.c'],['../group__w25qxx__driver.html#ga9d7f08f62bd17c0473385558d111f910',1,'W25Q_EraseChp(void):&#160;W25QXX.c']]],
-  ['w25q_5ferasesector',['W25Q_EraseSector',['../group__w25qxx__driver.html#ga8508fa9b85d13add4ca7f86a1df0344f',1,'W25Q_EraseSector(uint32_t addr):&#160;W25QXX.c'],['../group__w25qxx__driver.html#ga8508fa9b85d13add4ca7f86a1df0344f',1,'W25Q_EraseSector(uint32_t addr):&#160;W25QXX.c']]],
-  ['w25q_5finit',['W25Q_Init',['../group__w25qxx__driver.html#gaf905c97c7065e76abcac1dae07825236',1,'W25Q_Init(SPI_HandleTypeDef *handle):&#160;W25QXX.c'],['../group__w25qxx__driver.html#gaf905c97c7065e76abcac1dae07825236',1,'W25Q_Init(SPI_HandleTypeDef *handle):&#160;W25QXX.c']]],
-  ['w25q_5fread',['W25Q_Read',['../group__w25qxx__driver.html#ga5902ef8b3c02924335909790a80f2ef7',1,'W25Q_Read(uint32_t addr, uint8_t *buffer, uint16_t length):&#160;W25QXX.c'],['../group__w25qxx__driver.html#ga5902ef8b3c02924335909790a80f2ef7',1,'W25Q_Read(uint32_t addr, uint8_t *buffer, uint16_t length):&#160;W25QXX.c']]],
-  ['w25q_5fwrite',['W25Q_Write',['../group__w25qxx__driver.html#ga1accba626daec26def426f050289dafa',1,'W25Q_Write(uint32_t addr, uint8_t *buffer, uint16_t length):&#160;W25QXX.c'],['../group__w25qxx__driver.html#ga1accba626daec26def426f050289dafa',1,'W25Q_Write(uint32_t addr, uint8_t *buffer, uint16_t length):&#160;W25QXX.c']]]
+  ['ringbuffer_5fclear',['RingBuffer_Clear',['../group__ring__buffer.html#ga6d3f4a0e984e06f12f2ce0a3526b3ab3',1,'RingBuffer.c']]],
+  ['ringbuffer_5finit',['RingBuffer_Init',['../group__ring__buffer.html#ga56b178c9b6d6fd90b72d8aee91cb323d',1,'RingBuffer.c']]],
+  ['ringbuffer_5fread',['RingBuffer_Read',['../group__ring__buffer.html#ga4e645f3fcc775d45615e726b31a7f800',1,'RingBuffer.c']]],
+  ['ringbuffer_5fused',['RingBuffer_Used',['../group__ring__buffer.html#ga1651e202ca2c8ecc03b234948816c8d8',1,'RingBuffer.c']]],
+  ['ringbuffer_5fwrite',['RingBuffer_Write',['../group__ring__buffer.html#ga24331e4748ef6e1cc294fd4d55d7b736',1,'RingBuffer.c']]]
 ];

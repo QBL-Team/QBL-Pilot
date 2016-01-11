@@ -870,12 +870,12 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend="qbl-pilot configuration\startup_stm32f407xx.d" -o"qbl-pilot co
-nfiguration\startup_stm32f407xx.o" -IE:\Git\QBL-Pilot\MDK-ARM\RTE -ID:\Develop\
-Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include -ID:\Develop\Keil\ARM\PACK\Keil\STM
-32F4xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__MICRO
-LIB SETA 1" --predefine="__UVISION_VERSION SETA 517" --predefine="_RTE_ SETA 1"
- --predefine="STM32F407xx SETA 1" --list=startup_stm32f407xx.lst ../Drivers/CMS
-IS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f407xx.s
+nfiguration\startup_stm32f407xx.o" -IE:\Works\QBL-Pilot\MDK-ARM\RTE -ID:\Develo
+p\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include -ID:\Develop\Keil\ARM\PACK\Keil\S
+TM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__MIC
+ROLIB SETA 1" --predefine="__UVISION_VERSION SETA 517" --predefine="_RTE_ SETA 
+1" --predefine="STM32F407xx SETA 1" --list=startup_stm32f407xx.lst ../Drivers/C
+MSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f407xx.s
 
 
 
