@@ -18,6 +18,17 @@ void PWMOutput_Init(TIM_HandleTypeDef * tim1,TIM_HandleTypeDef * tim2)
 {
     pwm_out_handle1 = tim1;
     pwm_out_handle2 = tim2;
+    
+    HAL_TIM_OC_Start(pwm_out_handle1,TIM_CHANNEL_1);
+    HAL_TIM_OC_Start(pwm_out_handle1,TIM_CHANNEL_2);
+    HAL_TIM_OC_Start(pwm_out_handle1,TIM_CHANNEL_3);
+    HAL_TIM_OC_Start(pwm_out_handle1,TIM_CHANNEL_4);
+    
+    
+    HAL_TIM_OC_Start(pwm_out_handle2,TIM_CHANNEL_1);
+    HAL_TIM_OC_Start(pwm_out_handle2,TIM_CHANNEL_2);
+    HAL_TIM_OC_Start(pwm_out_handle2,TIM_CHANNEL_3);
+    HAL_TIM_OC_Start(pwm_out_handle2,TIM_CHANNEL_4);
 }
 
 void PWMOutput_Apply(uint16_t output[8])

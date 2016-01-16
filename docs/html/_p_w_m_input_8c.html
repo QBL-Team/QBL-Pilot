@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>QBL-Pilot: E:/Works/QBL-Pilot/Drivers/Device/PWMOutput.h Source File</title>
+<title>QBL-Pilot: E:/Works/QBL-Pilot/Drivers/Device/PWMInput.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,13 +85,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">PWMOutput.h</div>  </div>
+<div class="title">PWMInput.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_p_w_m_output_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __PWMOUTPUT_H</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define __PWMOUTPUT_H</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;stm32f4xx_hal.h&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__pwm__output.html#ga3c1477a43a395a87f2024c47bf82238a">PWMOutput_Init</a>(TIM_HandleTypeDef * tim1,TIM_HandleTypeDef * tim2);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="group__pwm__output.html#gaa1286e948ac97354695c20c26a94c0ad">PWMOutput_Apply</a>(uint16_t output[8]);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="group__pwm__output_html_gaa1286e948ac97354695c20c26a94c0ad"><div class="ttname"><a href="group__pwm__output.html#gaa1286e948ac97354695c20c26a94c0ad">PWMOutput_Apply</a></div><div class="ttdeci">void PWMOutput_Apply(uint16_t output[8])</div><div class="ttdoc">PWMOutput_Apply Apply new output for all 8 channel. </div><div class="ttdef"><b>Definition:</b> PWMOutput.c:34</div></div>
-<div class="ttc" id="group__pwm__output_html_ga3c1477a43a395a87f2024c47bf82238a"><div class="ttname"><a href="group__pwm__output.html#ga3c1477a43a395a87f2024c47bf82238a">PWMOutput_Init</a></div><div class="ttdeci">void PWMOutput_Init(TIM_HandleTypeDef *tim1, TIM_HandleTypeDef *tim2)</div><div class="ttdoc">PWMOutput_Init Init the pwm output module. </div><div class="ttdef"><b>Definition:</b> PWMOutput.c:17</div></div>
-</div><!-- fragment --></div><!-- contents -->
+<div class="textblock"><code>#include &quot;<a class="el" href="_p_w_m_input_8h_source.html">PWMInput.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_w_m_input___type_def.html">PWMInput_TypeDef</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private struct used for capture routine.  <a href="struct_p_w_m_input___type_def.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga907cf0401cd98c5db37099f2fe7c260b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pwm__input__private.html#ga907cf0401cd98c5db37099f2fe7c260b">PWMInput_Init</a> (TIM_HandleTypeDef *timer1, TIM_HandleTypeDef *timer2)</td></tr>
+<tr class="memdesc:ga907cf0401cd98c5db37099f2fe7c260b"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWMInput_Init Init timer for caputre.  <a href="group__pwm__input__private.html#ga907cf0401cd98c5db37099f2fe7c260b">More...</a><br /></td></tr>
+<tr class="separator:ga907cf0401cd98c5db37099f2fe7c260b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga519fdd17f3ec0ed9fe0c8b1a858c8b68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pwm__input__private.html#ga519fdd17f3ec0ed9fe0c8b1a858c8b68">PWMInput_GetInput</a> (uint16_t readout[8])</td></tr>
+<tr class="memdesc:ga519fdd17f3ec0ed9fe0c8b1a858c8b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWMInput_GetInput Get capture value.  <a href="group__pwm__input__private.html#ga519fdd17f3ec0ed9fe0c8b1a858c8b68">More...</a><br /></td></tr>
+<tr class="separator:ga519fdd17f3ec0ed9fe0c8b1a858c8b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga77a2401a35ddd9bd0b8fc28331b81381"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_TIM_IC_CaptureCallback</b> (TIM_HandleTypeDef *htim)</td></tr>
+<tr class="separator:ga77a2401a35ddd9bd0b8fc28331b81381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>no1wudi </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

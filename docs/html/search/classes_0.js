@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ringbuffer_5ftypedef',['RingBuffer_TypeDef',['../struct_ring_buffer___type_def.html',1,'']]]
+  ['pwminput_5ftypedef',['PWMInput_TypeDef',['../struct_p_w_m_input___type_def.html',1,'']]]
 ];

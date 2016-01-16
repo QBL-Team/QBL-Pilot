@@ -55,9 +55,9 @@ void MX_TIM1_Init(void)
   TIM_OC_InitTypeDef sConfigOC;
 
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 0;
+  htim1.Init.Prescaler = 7;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 0;
+  htim1.Init.Period = 52499;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   HAL_TIM_PWM_Init(&htim1);
@@ -76,7 +76,7 @@ void MX_TIM1_Init(void)
   HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig);
 
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 20999;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -98,9 +98,9 @@ void MX_TIM2_Init(void)
   TIM_IC_InitTypeDef sConfigIC;
 
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 0;
+  htim2.Init.Prescaler = 83;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 0;
+  htim2.Init.Period = 2499;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   HAL_TIM_IC_Init(&htim2);
 
@@ -128,9 +128,9 @@ void MX_TIM3_Init(void)
   TIM_OC_InitTypeDef sConfigOC;
 
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 0;
+  htim3.Init.Prescaler = 3;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 0;
+  htim3.Init.Period = 52499;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   HAL_TIM_PWM_Init(&htim3);
 
@@ -139,7 +139,7 @@ void MX_TIM3_Init(void)
   HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig);
 
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 20999;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1);
@@ -158,9 +158,9 @@ void MX_TIM4_Init(void)
   TIM_IC_InitTypeDef sConfigIC;
 
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 0;
+  htim4.Init.Prescaler = 83;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 0;
+  htim4.Init.Period = 2499;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   HAL_TIM_IC_Init(&htim4);
 
@@ -286,6 +286,9 @@ void HAL_TIM_IC_MspInit(TIM_HandleTypeDef* htim_ic)
     GPIO_InitStruct.Alternate = GPIO_AF1_TIM2;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+    /* Peripheral interrupt init*/
+    HAL_NVIC_SetPriority(TIM2_IRQn, 1, 0);
+    HAL_NVIC_EnableIRQ(TIM2_IRQn);
   /* USER CODE BEGIN TIM2_MspInit 1 */
 
   /* USER CODE END TIM2_MspInit 1 */
@@ -311,6 +314,9 @@ void HAL_TIM_IC_MspInit(TIM_HandleTypeDef* htim_ic)
     GPIO_InitStruct.Alternate = GPIO_AF2_TIM4;
     HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+    /* Peripheral interrupt init*/
+    HAL_NVIC_SetPriority(TIM4_IRQn, 1, 0);
+    HAL_NVIC_EnableIRQ(TIM4_IRQn);
   /* USER CODE BEGIN TIM4_MspInit 1 */
 
   /* USER CODE END TIM4_MspInit 1 */
@@ -329,7 +335,7 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
     __TIM6_CLK_ENABLE();
 
     /* Peripheral interrupt init*/
-    HAL_NVIC_SetPriority(TIM6_DAC_IRQn, 1, 0);
+    HAL_NVIC_SetPriority(TIM6_DAC_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn);
   /* USER CODE BEGIN TIM6_MspInit 1 */
 
@@ -403,6 +409,9 @@ void HAL_TIM_IC_MspDeInit(TIM_HandleTypeDef* htim_ic)
     */
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
 
+    /* Peripheral interrupt Deinit*/
+    HAL_NVIC_DisableIRQ(TIM2_IRQn);
+
   /* USER CODE BEGIN TIM2_MspDeInit 1 */
 
   /* USER CODE END TIM2_MspDeInit 1 */
@@ -422,6 +431,9 @@ void HAL_TIM_IC_MspDeInit(TIM_HandleTypeDef* htim_ic)
     PD15     ------> TIM4_CH4 
     */
     HAL_GPIO_DeInit(GPIOD, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15);
+
+    /* Peripheral interrupt Deinit*/
+    HAL_NVIC_DisableIRQ(TIM4_IRQn);
 
   /* USER CODE BEGIN TIM4_MspDeInit 1 */
 
