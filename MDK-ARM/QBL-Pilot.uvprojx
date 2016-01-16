@@ -631,6 +631,11 @@
               <FileType>1</FileType>
               <FilePath>..\Drivers\Device\W25QXX.c</FilePath>
             </File>
+            <File>
+              <FileName>PWMOutput.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Device\PWMOutput.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -675,6 +680,11 @@
               <FileName>TimeMeter.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\TimeMeter.c</FilePath>
+            </File>
+            <File>
+              <FileName>QBLProtocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\QBLProtocol.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time_20meter',['Time Meter',['../group__time__meter.html',1,'']]]
+  ['ring_20buffer',['Ring Buffer',['../group__ring__buffer.html',1,'']]]
 ];

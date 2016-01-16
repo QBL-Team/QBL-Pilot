@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['ringbuffer_5fclear',['RingBuffer_Clear',['../group__ring__buffer.html#ga6d3f4a0e984e06f12f2ce0a3526b3ab3',1,'RingBuffer.c']]],
-  ['ringbuffer_5finit',['RingBuffer_Init',['../group__ring__buffer.html#ga56b178c9b6d6fd90b72d8aee91cb323d',1,'RingBuffer.c']]],
-  ['ringbuffer_5fread',['RingBuffer_Read',['../group__ring__buffer.html#ga4e645f3fcc775d45615e726b31a7f800',1,'RingBuffer.c']]],
-  ['ringbuffer_5fused',['RingBuffer_Used',['../group__ring__buffer.html#ga1651e202ca2c8ecc03b234948816c8d8',1,'RingBuffer.c']]],
-  ['ringbuffer_5fwrite',['RingBuffer_Write',['../group__ring__buffer.html#ga24331e4748ef6e1cc294fd4d55d7b736',1,'RingBuffer.c']]]
+  ['pwmoutput_5fapply',['PWMOutput_Apply',['../group__pwm__output.html#gaa1286e948ac97354695c20c26a94c0ad',1,'PWMOutput_Apply(uint16_t output[8]):&#160;PWMOutput.c'],['../group__pwm__output.html#gaa1286e948ac97354695c20c26a94c0ad',1,'PWMOutput_Apply(uint16_t output[8]):&#160;PWMOutput.c']]],
+  ['pwmoutput_5finit',['PWMOutput_Init',['../group__pwm__output.html#ga3c1477a43a395a87f2024c47bf82238a',1,'PWMOutput_Init(TIM_HandleTypeDef *tim1, TIM_HandleTypeDef *tim2):&#160;PWMOutput.c'],['../group__pwm__output.html#ga3c1477a43a395a87f2024c47bf82238a',1,'PWMOutput_Init(TIM_HandleTypeDef *tim1, TIM_HandleTypeDef *tim2):&#160;PWMOutput.c']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ringbuffer_2ec',['RingBuffer.c',['../_ring_buffer_8c.html',1,'']]],
-  ['ringbuffer_2eh',['RingBuffer.h',['../_ring_buffer_8h.html',1,'']]]
+  ['pwmoutput_2ec',['PWMOutput.c',['../_p_w_m_output_8c.html',1,'']]],
+  ['pwmoutput_2eh',['PWMOutput.h',['../_p_w_m_output_8h.html',1,'']]]
 ];

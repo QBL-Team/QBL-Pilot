@@ -51,6 +51,7 @@
 #include "W25QXX.h"
 #include "TimeMeter.h"
 #include "mavlink.h"
+#include "PWMOutput.h"
 
 /* USER CODE END Includes */
 
@@ -114,6 +115,7 @@ int main(void)
     /* USER CODE BEGIN 2 */
 
     LED_Show(LED_COLOR_OFF);
+    PWMOutput_Init(&htim1,&htim3);
     TimeMeter_Init(&htim6);
     MPU6050_Init(&hi2c1);
     HMC5883_Init(&hi2c1);

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ring_20buffer',['Ring Buffer',['../group__ring__buffer.html',1,'']]]
+  ['pwm_20output',['PWM Output',['../group__pwm__output.html',1,'']]]
 ];
