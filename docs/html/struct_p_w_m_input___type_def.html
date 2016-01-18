@@ -85,34 +85,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">PWMInput_TypeDef Struct Reference<div class="ingroups"><a class="el" href="group__pwm__input.html">PWM Input</a> &raquo; <a class="el" href="group__pwm__input__private.html">PWM Input Private</a></div></div>  </div>
+<div class="title">PWMInput_TypeDef Struct Reference<div class="ingroups"><a class="el" href="group__pwm__input.html">PWM Input 驱动</a> &raquo; <a class="el" href="group__pwm__input__private.html">PWM Input 驱动内部数据</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Private struct used for capture routine.  
+<p>捕获过程内部使用的数据结构  
  <a href="struct_p_w_m_input___type_def.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:af665967c41413822d357fd2e756f30d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af665967c41413822d357fd2e756f30d9"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_w_m_input___type_def.html#af665967c41413822d357fd2e756f30d9">edge_indicater</a></td></tr>
-<tr class="memdesc:af665967c41413822d357fd2e756f30d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">true for Rising edge,false for Falling edge <br /></td></tr>
+<tr class="memdesc:af665967c41413822d357fd2e756f30d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">为true时，上升沿触发中断，为false时，下降沿触发中断 <br /></td></tr>
 <tr class="separator:af665967c41413822d357fd2e756f30d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3ff78af54b41499832ab413a5679dce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3ff78af54b41499832ab413a5679dce"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_w_m_input___type_def.html#af3ff78af54b41499832ab413a5679dce">rising_edge</a></td></tr>
-<tr class="memdesc:af3ff78af54b41499832ab413a5679dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rising start time. <br /></td></tr>
+<tr class="memdesc:af3ff78af54b41499832ab413a5679dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">上升沿发生的时刻 <br /></td></tr>
 <tr class="separator:af3ff78af54b41499832ab413a5679dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c1db58d7b10a024070833b81e62092b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c1db58d7b10a024070833b81e62092b"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_w_m_input___type_def.html#a9c1db58d7b10a024070833b81e62092b">falling_edge</a></td></tr>
-<tr class="memdesc:a9c1db58d7b10a024070833b81e62092b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Falling start time. <br /></td></tr>
+<tr class="memdesc:a9c1db58d7b10a024070833b81e62092b"><td class="mdescLeft">&#160;</td><td class="mdescRight">下降沿发生的时刻 <br /></td></tr>
 <tr class="separator:a9c1db58d7b10a024070833b81e62092b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aede6bd348c8bb45369ab9790d37c29f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aede6bd348c8bb45369ab9790d37c29f9"></a>
 uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_w_m_input___type_def.html#aede6bd348c8bb45369ab9790d37c29f9">pulse_wide</a></td></tr>
-<tr class="memdesc:aede6bd348c8bb45369ab9790d37c29f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pulse wide. <br /></td></tr>
+<tr class="memdesc:aede6bd348c8bb45369ab9790d37c29f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">脉冲宽度 <br /></td></tr>
 <tr class="separator:aede6bd348c8bb45369ab9790d37c29f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Private struct used for capture routine. </p>
+<div class="textblock"><p>捕获过程内部使用的数据结构 </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>E:/Works/QBL-Pilot/Drivers/Device/<a class="el" href="_p_w_m_input_8c.html">PWMInput.c</a></li>
 </ul>

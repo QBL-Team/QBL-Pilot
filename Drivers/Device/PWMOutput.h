@@ -9,22 +9,22 @@
 #include "stm32f4xx_hal.h"
 
 /*!
- *@defgroup pwm_output  PWM Output
+ *@defgroup pwm_output  PWM Output 驱动
  * @{
  */
 
 
 /*!
- * \brief PWMOutput_Init    Init the pwm output module
- * \param tim1  Timer handle of first 4 channels
- * \param tim2  Timer handle of other 4 channels
+ * \brief PWMOutput_Init    初始化定时器，用于PWM脉冲输出
+ * \param tim1  用于输出的定时器1
+ * \param tim2  用于输出的定时器2
  */
 
 extern void PWMOutput_Init(TIM_HandleTypeDef * tim1,TIM_HandleTypeDef * tim2);
 
 /*!
- * \brief PWMOutput_Apply   Apply new output for all 8 channel
- * \param output    Range from 0 ~ 21000,mapped to 1ms ~ 2ms.
+ * \brief PWMOutput_Apply   应用输出到定时器的各通道
+ * \param output    范围为0 ~ 21000,对应着脉冲宽度1ms ~ 2ms，元素0~3对应定时器1的通道1到通道4，元素4~7对应定时器2的通道1到通道4
  */
 extern void PWMOutput_Apply(uint16_t output[8]);
 

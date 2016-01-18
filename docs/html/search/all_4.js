@@ -11,6 +11,6 @@ var searchData=
   ['led_5fcolor_5fred',['LED_COLOR_RED',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faa20c3f7e3db2eca4ce0fe784975373384',1,'LED.h']]],
   ['led_5fcolor_5fwhite',['LED_COLOR_WHITE',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faae0568a71373a19d68ac019a67fcb2c3b',1,'LED.h']]],
   ['led_5fcolor_5fyellow',['LED_COLOR_YELLOW',['../group__led__driver.html#gga1f3289eeddfbcff1515a3786dc0518faab792f0e1b8644f6f22f3f0ab799bd3a9',1,'LED.h']]],
-  ['led_20driver',['LED Driver',['../group__led__driver.html',1,'']]],
+  ['led_20驱动',['LED 驱动',['../group__led__driver.html',1,'']]],
   ['led_5fshow',['LED_Show',['../group__led__driver.html#gaf96fb94f6dcac6be219eb0019fe3b4ae',1,'LED_Show(uint8_t LED_COLOR):&#160;LED.c'],['../group__led__driver.html#gaf96fb94f6dcac6be219eb0019fe3b4ae',1,'LED_Show(uint8_t LED_COLOR):&#160;LED.c']]]
 ];

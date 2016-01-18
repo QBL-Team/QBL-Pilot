@@ -1,9 +1,9 @@
 var searchData=
 [
   ['pulse_5fwide',['pulse_wide',['../struct_p_w_m_input___type_def.html#aede6bd348c8bb45369ab9790d37c29f9',1,'PWMInput_TypeDef']]],
-  ['pwm_20input',['PWM Input',['../group__pwm__input.html',1,'']]],
-  ['pwm_20input_20private',['PWM Input Private',['../group__pwm__input__private.html',1,'']]],
-  ['pwm_20output',['PWM Output',['../group__pwm__output.html',1,'']]],
+  ['pwm_20input_20驱动',['PWM Input 驱动',['../group__pwm__input.html',1,'']]],
+  ['pwm_20input_20驱动内部数据',['PWM Input 驱动内部数据',['../group__pwm__input__private.html',1,'']]],
+  ['pwm_20output_20驱动',['PWM Output 驱动',['../group__pwm__output.html',1,'']]],
   ['pwminput_2ec',['PWMInput.c',['../_p_w_m_input_8c.html',1,'']]],
   ['pwminput_2eh',['PWMInput.h',['../_p_w_m_input_8h.html',1,'']]],
   ['pwminput_5fgetinput',['PWMInput_GetInput',['../group__pwm__input__private.html#ga519fdd17f3ec0ed9fe0c8b1a858c8b68',1,'PWMInput_GetInput(uint16_t readout[8]):&#160;PWMInput.c'],['../group__pwm__input.html#ga519fdd17f3ec0ed9fe0c8b1a858c8b68',1,'PWMInput_GetInput(uint16_t readout[8]):&#160;PWMInput.c']]],

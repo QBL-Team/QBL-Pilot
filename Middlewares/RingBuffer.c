@@ -8,23 +8,23 @@
 
 /*!
  *@ingroup ring_buffer
- * \brief RING_BUFFER_ENTER_CRITICAL Macro to enter critical mode
+ * \brief RING_BUFFER_ENTER_CRITICAL 进入临界模式
  */
 
 #define RING_BUFFER_ENTER_CRITICAL()    __disable_irq()
 
 /*!
  *@ingroup ring_buffer
- * \brief RING_BUFFER_EXIT_CRITICAL Macro to exit critical mode
+ * \brief RING_BUFFER_EXIT_CRITICAL 退出临界模式
  */
 
 #define RING_BUFFER_EXIT_CRITICAL()     __enable_irq()
 
 /*!
  * @ingroup ring_buffer
- * \brief RingBuffer_Init  Construct a new ring buffer
- * \param capacity  The buffer size allocated for the buffer pool
- * \return  Pointer to ring buffer instance
+ * \brief RingBuffer_Init 构造一个新的环形缓冲实例
+ * \param capacity  要给缓冲池分配的容量大小，单位为字节
+ * \return  环形缓冲实例的指针
  */
 
 RingBuffer_TypeDef * RingBuffer_Init(uint16_t capacity)
@@ -56,9 +56,9 @@ RingBuffer_TypeDef * RingBuffer_Init(uint16_t capacity)
 
 /*!
  * @ingroup ring_buffer
- * \brief RingBuffer_Write Write data to buffer
- * \param ring_buffer   Ring buffer instance
- * \param data  Data to be wrote
+ * \brief RingBuffer_Write 向环形缓冲中写入数据
+ * \param ring_buffer   环形缓冲的指针
+ * \param data  将要写入的数据
  */
 
 void RingBuffer_Write(RingBuffer_TypeDef * ring_buffer,uint8_t data){
@@ -77,8 +77,8 @@ void RingBuffer_Write(RingBuffer_TypeDef * ring_buffer,uint8_t data){
 
 /*!
  * @ingroup ring_buffer
- * \brief RingBuffer_Read  Read a data from buffer
- * \param ring_buffer   Buffer instance
+ * \brief RingBuffer_Read  从环形缓冲中读取一个数据
+ * \param ring_buffer   环形缓冲的指针
  * \return
  */
 
@@ -100,8 +100,8 @@ uint8_t RingBuffer_Read(RingBuffer_TypeDef * ring_buffer){
 
 /*!
  * @ingroup ring_buffer
- * \brief RingBuffer_Used  Get the data numbers in buffer
- * \param ring_buffer   Buffer instance
+ * \brief RingBuffer_Used  获取环形缓冲已经使用的容量
+ * \param ring_buffer   环形缓冲的实例指针
  * \return
  */
 
@@ -111,8 +111,8 @@ uint16_t RingBuffer_Used(RingBuffer_TypeDef * ring_buffer){
 
 /*!
  * @ingroup ring_buffer
- * \brief RingBuffer_Clear Clear buffer
- * \param ring_buffer   Ring buffer instance
+ * \brief RingBuffer_Clear 清除缓冲区
+ * \param ring_buffer   要清除的缓冲的实例
  */
 
 void RingBuffer_Clear(RingBuffer_TypeDef * ring_buffer) {

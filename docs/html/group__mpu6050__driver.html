@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>QBL-Pilot: MPU6050 Driver</title>
+<title>QBL-Pilot: MPU6050 驱动</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">MPU6050 Driver</div>  </div>
+<div class="title">MPU6050 驱动</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
@@ -87,44 +87,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Macros</h2></td></tr>
 <tr class="memitem:ga4a9abee2bb288d66f5252cbf247ef439"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga4a9abee2bb288d66f5252cbf247ef439"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__driver.html#ga4a9abee2bb288d66f5252cbf247ef439">MPU6050_IIC_ADDRESS</a>&#160;&#160;&#160;0xD0</td></tr>
-<tr class="memdesc:ga4a9abee2bb288d66f5252cbf247ef439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip's iic address. <br /></td></tr>
+<tr class="memdesc:ga4a9abee2bb288d66f5252cbf247ef439"><td class="mdescLeft">&#160;</td><td class="mdescRight">芯片的IIC地址，参见其数据手册 <br /></td></tr>
 <tr class="separator:ga4a9abee2bb288d66f5252cbf247ef439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga733d4101fbe427bedb2f15ca20b71bac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga733d4101fbe427bedb2f15ca20b71bac"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__driver.html#ga733d4101fbe427bedb2f15ca20b71bac">MPU6050_GYRO_SCALE</a>&#160;&#160;&#160;32.8f</td></tr>
-<tr class="memdesc:ga733d4101fbe427bedb2f15ca20b71bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gyro data scaler. <br /></td></tr>
+<tr class="memdesc:ga733d4101fbe427bedb2f15ca20b71bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">陀螺仪的数据缩放比例 <br /></td></tr>
 <tr class="separator:ga733d4101fbe427bedb2f15ca20b71bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga669a13ba6d055905339a57b50ecd8b3a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga669a13ba6d055905339a57b50ecd8b3a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__driver.html#ga669a13ba6d055905339a57b50ecd8b3a">MPU6050_ACCE_SCALE</a>&#160;&#160;&#160;4096.0f</td></tr>
-<tr class="memdesc:ga669a13ba6d055905339a57b50ecd8b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acce data scaler. <br /></td></tr>
+<tr class="memdesc:ga669a13ba6d055905339a57b50ecd8b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">加速度计的数据缩放比例 <br /></td></tr>
 <tr class="separator:ga669a13ba6d055905339a57b50ecd8b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac9f31f774cd2699e69ae7e7b7f224483"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac9f31f774cd2699e69ae7e7b7f224483"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__driver.html#gac9f31f774cd2699e69ae7e7b7f224483">MPU6050_CHIP_ID</a>&#160;&#160;&#160;0x68</td></tr>
-<tr class="memdesc:gac9f31f774cd2699e69ae7e7b7f224483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip's id code. <br /></td></tr>
+<tr class="memdesc:gac9f31f774cd2699e69ae7e7b7f224483"><td class="mdescLeft">&#160;</td><td class="mdescRight">芯片的ID <br /></td></tr>
 <tr class="separator:gac9f31f774cd2699e69ae7e7b7f224483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacb2b34ee8979b3165680de2313fe7f7f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gacb2b34ee8979b3165680de2313fe7f7f"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__driver.html#gacb2b34ee8979b3165680de2313fe7f7f">MPU6050_REG_ID_ADDR</a>&#160;&#160;&#160;0x75</td></tr>
-<tr class="memdesc:gacb2b34ee8979b3165680de2313fe7f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip's id register's address. <br /></td></tr>
+<tr class="memdesc:gacb2b34ee8979b3165680de2313fe7f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">芯片ID寄存器的地址 <br /></td></tr>
 <tr class="separator:gacb2b34ee8979b3165680de2313fe7f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0cb210a5e35606d81cbe9ac18fc58c66"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0cb210a5e35606d81cbe9ac18fc58c66"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__driver.html#ga0cb210a5e35606d81cbe9ac18fc58c66">MPU6050_REG_DATA_ADDR</a>&#160;&#160;&#160;0x3B</td></tr>
-<tr class="memdesc:ga0cb210a5e35606d81cbe9ac18fc58c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data registers' address. <br /></td></tr>
+<tr class="memdesc:ga0cb210a5e35606d81cbe9ac18fc58c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据寄存器的起始地址 <br /></td></tr>
 <tr class="separator:ga0cb210a5e35606d81cbe9ac18fc58c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabc34a5f0aa7ab3953ed9879d9583aa3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabc34a5f0aa7ab3953ed9879d9583aa3b"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__driver.html#gabc34a5f0aa7ab3953ed9879d9583aa3b">MPU6050_REG_DATA_LENGTH</a>&#160;&#160;&#160;14</td></tr>
-<tr class="memdesc:gabc34a5f0aa7ab3953ed9879d9583aa3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many data registers to be read. <br /></td></tr>
+<tr class="memdesc:gabc34a5f0aa7ab3953ed9879d9583aa3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">将要读取的数据的长度，单位为byte <br /></td></tr>
 <tr class="separator:gabc34a5f0aa7ab3953ed9879d9583aa3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga158691fc91945a8fe2f198653e0b4c28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga158691fc91945a8fe2f198653e0b4c28"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__driver.html#ga158691fc91945a8fe2f198653e0b4c28">MPU6050_REG_ADDR_WIDTH</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ga158691fc91945a8fe2f198653e0b4c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">width of chip's register address <br /></td></tr>
+<tr class="memdesc:ga158691fc91945a8fe2f198653e0b4c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">寄存器地址的宽度，单位为byte <br /></td></tr>
 <tr class="separator:ga158691fc91945a8fe2f198653e0b4c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gaa74c36b9e51517d05c7df251edbeb00f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__driver.html#gaa74c36b9e51517d05c7df251edbeb00f">MPU6050_Init</a> (I2C_HandleTypeDef *handle)</td></tr>
-<tr class="memdesc:gaa74c36b9e51517d05c7df251edbeb00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPU6050_Init Initialize the MPU6050 MEMS sensor.  <a href="#gaa74c36b9e51517d05c7df251edbeb00f">More...</a><br /></td></tr>
+<tr class="memdesc:gaa74c36b9e51517d05c7df251edbeb00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPU6050_Init 初始化传感器  <a href="#gaa74c36b9e51517d05c7df251edbeb00f">More...</a><br /></td></tr>
 <tr class="separator:gaa74c36b9e51517d05c7df251edbeb00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga10bdd33162155b7b3658d3de0afe3cc0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mpu6050__driver.html#ga10bdd33162155b7b3658d3de0afe3cc0">MPU6050_Update</a> (float axis[6], float *temp)</td></tr>
-<tr class="memdesc:ga10bdd33162155b7b3658d3de0afe3cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPU6050_Update Get newest data from sensor.  <a href="#ga10bdd33162155b7b3658d3de0afe3cc0">More...</a><br /></td></tr>
+<tr class="memdesc:ga10bdd33162155b7b3658d3de0afe3cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPU6050_Update 从传感器中读取最新的数据  <a href="#ga10bdd33162155b7b3658d3de0afe3cc0">More...</a><br /></td></tr>
 <tr class="separator:ga10bdd33162155b7b3658d3de0afe3cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -143,14 +143,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>MPU6050_Init Initialize the MPU6050 MEMS sensor. </p>
+<p>MPU6050_Init 初始化传感器 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">handle</td><td>Handle pointed to the IIC bus </td></tr>
+    <tr><td class="paramname">handle</td><td>挂载传感器的IIC总线的句柄 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Return true if init succeed </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>如果初始化成功，返回true </dd></dl>
 
 </div>
 </div>
@@ -178,15 +178,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>MPU6050_Update Get newest data from sensor. </p>
+<p>MPU6050_Update 从传感器中读取最新的数据 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">axis</td><td>Axis array contains 6 data ,0 - 2 mapped to AcceX - AcceY - AcceZ,3-5 mapped to GyroX-GyroY-GyroZ </td></tr>
-    <tr><td class="paramname">temp</td><td>Pointed to temperature,if don't need,use NULL. </td></tr>
+    <tr><td class="paramname">axis</td><td>本数组长度为6，元素0~2对应于加速度计的X,Y,Z三个轴；元素3~5对应于陀螺仪的X,Y,Z三个轴 </td></tr>
+    <tr><td class="paramname">temp</td><td>读取传感器的温度，如果不需要，将本参数设置为NULL </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>If read succeed,return true </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>如果初始化成功，返回true </dd></dl>
 
 </div>
 </div>

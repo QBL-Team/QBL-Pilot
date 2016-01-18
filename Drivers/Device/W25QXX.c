@@ -7,40 +7,40 @@
 
 /*!
   *
-  * @defgroup w25qxx_driver W25QXX Driver
+  * @defgroup w25qxx_driver W25QXX 驱动
   * @{
   */
 
 /*!
  *
- * @defgroup w25qxx_driver_private W25QXX Driver Private
+ * @defgroup w25qxx_driver_private W25QXX 驱动内部数据
  * @{
  */
 
-#define W25QXX_CMD_WRITE_ENABLE     0x06    ///< Command for write enable
-#define W25QXX_CMD_WRITE_DISABLE    0x04    ///< Command for write disable
-#define W25QXX_CMD_READ_STATUS_1    0x05    ///< Command for read status register 1
-#define W25QXX_CMD_CHIP_EARSE       0xC7    ///< Command for full chip earse
-#define W25QXX_CMD_POWER_DOWN       0xB9    ///< Command for power down
-#define W25QXX_CMD_PROGRAM          0x02    ///< Command for page program,max 256 byte once
-#define W25QXX_CMD_SECTOR_ERASE     0x20    ///< Command for sector erase
-#define W25QXX_CMD_BLOCK_ERASE      0xD8    ///< Command for block erase
-#define W25QXX_CMD_READ             0x03    ///< Command for read data
-#define W25QXX_CMD_READ_ID          0x9F    ///< Command for read chip id
+#define W25QXX_CMD_WRITE_ENABLE     0x06    ///< 写使能指令
+#define W25QXX_CMD_WRITE_DISABLE    0x04    ///< 写失能指令
+#define W25QXX_CMD_READ_STATUS_1    0x05    ///< 读取状态寄存器1
+#define W25QXX_CMD_CHIP_EARSE       0xC7    ///< 擦出整个芯片
+#define W25QXX_CMD_POWER_DOWN       0xB9    ///< 掉电指令
+#define W25QXX_CMD_PROGRAM          0x02    ///< 写数据指令，每次最大写入256字节
+#define W25QXX_CMD_SECTOR_ERASE     0x20    ///< 扇区擦除指令
+#define W25QXX_CMD_BLOCK_ERASE      0xD8    ///< 块区擦除指令
+#define W25QXX_CMD_READ             0x03    ///< 读数据指令
+#define W25QXX_CMD_READ_ID          0x9F    ///< 读ID指令
 
-#define W25QXX_BUSY_MASK            0x01    ///< Mask for busy bit
-#define W25QXX_WRITE_ENABLE_MASK    0x02    ///< Mask for write enbale bit
+#define W25QXX_BUSY_MASK            0x01    ///< 忙碌位掩码
+#define W25QXX_WRITE_ENABLE_MASK    0x02    ///< 写使能掩码
 
-#define W25QXX_CHIP_WINBOND_ID      0xEF    ///< Windbod chip's id
+#define W25QXX_CHIP_WINBOND_ID      0xEF    ///< 华邦芯片的ID
 
-#define W25QXX_CS_ON()        HAL_GPIO_WritePin(W25QXX_CS_GPIO_Port,W25QXX_CS_Pin,GPIO_PIN_RESET)  ///< Chil select on
-#define W25QXX_CS_OFF()       HAL_GPIO_WritePin(W25QXX_CS_GPIO_Port,W25QXX_CS_Pin,GPIO_PIN_SET)     ///< Chip select off
+#define W25QXX_CS_ON()        HAL_GPIO_WritePin(W25QXX_CS_GPIO_Port,W25QXX_CS_Pin,GPIO_PIN_RESET)  ///< 片选使能
+#define W25QXX_CS_OFF()       HAL_GPIO_WritePin(W25QXX_CS_GPIO_Port,W25QXX_CS_Pin,GPIO_PIN_SET)     ///< 片选失能
 
-static SPI_HandleTypeDef * spi_handle = NULL;   ///< Internal handle of spi bus
+static SPI_HandleTypeDef * spi_handle = NULL;
 
 /*!
- * \brief W25Q_GetStatus  Read status register 1
- * \return Current status
+ * \brief W25Q_GetStatus  读取状态寄存器1
+ * \return 返回当前状态寄存器的值
  */
 static uint8_t W25Q_GetStatus(void)
 {
@@ -53,8 +53,8 @@ static uint8_t W25Q_GetStatus(void)
 }
 
 /*!
- * \brief W25Q_SetWriteEnable   Enable write function of flash
- * \return  If set succeed ,return true
+ * \brief W25Q_SetWriteEnable   使能芯片的写入功能
+ * \return  如果使能成功，返回true
  */
 
 static bool W25Q_SetWriteEnable(void)
@@ -86,9 +86,9 @@ static bool W25Q_SetWriteEnable(void)
  * @}
  */
 /*!
- * \brief W25Q_Init Init the W25Qxx flash chips
- * \param handle    Handle of spi bus
- * \return If init succeed,return true
+ * \brief W25Q_Init 初始化W25Qx系列的闪存芯片
+ * \param handle    挂载闪存芯片的SPI总线的句柄
+ * \return 如果初始化成功，返回true
  */
 bool W25Q_Init(SPI_HandleTypeDef * handle)
 {
@@ -110,8 +110,8 @@ bool W25Q_Init(SPI_HandleTypeDef * handle)
 }
 
 /*!
- * \brief W25Q_CheckForIdle Check the chip is idle status or not
- * \return If chip in idle status,return true
+ * \brief W25Q_CheckForIdle 检查闪存芯片是否处于空闲状态，只有空闲状态可以进行操作
+ * \return 如果芯片处于空闲状态，返回true
  */
 
 bool W25Q_CheckForIdle(void)
@@ -125,11 +125,11 @@ bool W25Q_CheckForIdle(void)
 }
 
 /*!
- * \brief W25Q_EraseChp Erase full chip
- * \return
+ * \brief W25Q_EraseChp 擦除整个芯片
+ * \return 如果指令发送成功，返回true
  */
 
-bool W25Q_EraseChp(void)
+bool W25Q_EraseChip(void)
 {
     uint8_t tmp = W25QXX_CMD_CHIP_EARSE;
     
@@ -141,8 +141,8 @@ bool W25Q_EraseChp(void)
 }
 
 /*!
- * \brief W25Q_EraseSector Erase specific sector by address
- * \param addr  Address of sector
+ * \brief W25Q_EraseSector 擦除制定的扇区
+ * \param addr  要擦除的扇区的地址
  * \return
  */
 bool W25Q_EraseSector(uint32_t addr)
@@ -160,11 +160,11 @@ bool W25Q_EraseSector(uint32_t addr)
     return true;
 }
 /*!
- * \brief W25Q_Write Write data to flash
- * \param addr Address of start point in flash
- * \param buffer Data buffer point
- * \param length Data length,max 256 in byte
- * \return If write succeed,return true
+ * \brief W25Q_Write 写入数据到闪存芯片中
+ * \param addr 写入数据的起始地址
+ * \param buffer 写入数据的缓存
+ * \param length 要写入的数据的长度，最大256字节
+ * \return 如果写入成功，返回true
  */
 bool W25Q_Write(uint32_t addr, uint8_t * buffer, uint16_t length)
 {
@@ -188,11 +188,11 @@ bool W25Q_Write(uint32_t addr, uint8_t * buffer, uint16_t length)
 }
 
 /*!
- * \brief W25Q_Read Read data from flash
- * \param addr Address of position in flash
- * \param buffer Buffer to receive data
- * \param length Data length to read
- * \return If read succeed,return true
+ * \brief W25Q_Read 从闪存中读取数据
+ * \param addr 将要读取数据的起始地址
+ * \param buffer 接收数据的缓冲
+ * \param length 要读取的数据的长度
+ * \return 如果读取成功，返回true
  */
 
 bool W25Q_Read(uint32_t addr, uint8_t * buffer, uint16_t length)

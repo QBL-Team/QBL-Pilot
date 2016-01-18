@@ -12,19 +12,19 @@
  */
 
 /*!
- *@defgroup pwm_input_private PWM Input Private
+ *@defgroup pwm_input_private PWM Input 驱动内部数据
  *@{
  */
 
 /*!
- *\brief Private struct used for capture routine
+ *\brief 捕获过程内部使用的数据结构
  */
 typedef struct
 {
-    bool edge_indicater;        ///< true for Rising edge,false for Falling edge
-    uint16_t rising_edge;       ///< Rising start time
-    uint16_t falling_edge;      ///< Falling start time
-    uint16_t pulse_wide;        ///< Pulse wide
+    bool edge_indicater;        ///< 为true时，上升沿触发中断，为false时，下降沿触发中断
+    uint16_t rising_edge;       ///< 上升沿发生的时刻
+    uint16_t falling_edge;      ///< 下降沿发生的时刻
+    uint16_t pulse_wide;        ///< 脉冲宽度
 } PWMInput_TypeDef;
 
 static PWMInput_TypeDef input_array[8];
@@ -32,20 +32,20 @@ static TIM_HandleTypeDef * input_timer1, * input_timer2;
 
 static void PWMInput_Process(PWMInput_TypeDef * pwm, uint16_t value)
 {
-    if(pwm->edge_indicater)     //Current in Rising edge
+    if(pwm->edge_indicater)     //当前为上升沿触发中断
     {
         pwm->rising_edge = value;
-    } else {                    //Current in Falling edge
+    } else {                    //当前为下降沿触发中断
         pwm->falling_edge = value;
 
-        //Normal mode
+        //正常模式，上升沿发生时间小于1.5ms,下降沿发生在计数器重置之前
         if((pwm->rising_edge < 1499) && (pwm->falling_edge < 2499))
         {
             pwm->pulse_wide = pwm->falling_edge - pwm->rising_edge;
             return;
         }
 
-        //Ring cycled
+        //回环模式，上升沿在1.5ms后发生，发生下降沿时，定时器已经经过重置
 
         if((pwm->rising_edge > 1499) && (pwm->falling_edge < 1000))
         {
@@ -144,7 +144,7 @@ void PWMInput_Init(TIM_HandleTypeDef * timer1, TIM_HandleTypeDef * timer2)
     input_timer1 = timer1;
     input_timer2 = timer2;
 
-    //Init the array for input process
+    //初始化通道捕获数组的数据
 
     for(uint8_t i = 0; i < 8; i++)
     {

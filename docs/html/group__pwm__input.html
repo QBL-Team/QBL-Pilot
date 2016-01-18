@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>QBL-Pilot: PWM Input</title>
+<title>QBL-Pilot: PWM Input 驱动</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -79,22 +79,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#groups">Modules</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">PWM Input</div>  </div>
+<div class="title">PWM Input 驱动</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
 Modules</h2></td></tr>
-<tr class="memitem:group__pwm__input__private"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pwm__input__private.html">PWM Input Private</a></td></tr>
+<tr class="memitem:group__pwm__input__private"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pwm__input__private.html">PWM Input 驱动内部数据</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga907cf0401cd98c5db37099f2fe7c260b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pwm__input.html#ga907cf0401cd98c5db37099f2fe7c260b">PWMInput_Init</a> (TIM_HandleTypeDef *timer1, TIM_HandleTypeDef *timer2)</td></tr>
-<tr class="memdesc:ga907cf0401cd98c5db37099f2fe7c260b"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWMInput_Init Init timer for caputre.  <a href="#ga907cf0401cd98c5db37099f2fe7c260b">More...</a><br /></td></tr>
+<tr class="memdesc:ga907cf0401cd98c5db37099f2fe7c260b"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWMInput_Init 初始化定时器用于捕获脉冲输入  <a href="#ga907cf0401cd98c5db37099f2fe7c260b">More...</a><br /></td></tr>
 <tr class="separator:ga907cf0401cd98c5db37099f2fe7c260b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga519fdd17f3ec0ed9fe0c8b1a858c8b68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pwm__input.html#ga519fdd17f3ec0ed9fe0c8b1a858c8b68">PWMInput_GetInput</a> (uint16_t readout[8])</td></tr>
-<tr class="memdesc:ga519fdd17f3ec0ed9fe0c8b1a858c8b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWMInput_GetInput Get capture value.  <a href="#ga519fdd17f3ec0ed9fe0c8b1a858c8b68">More...</a><br /></td></tr>
+<tr class="memdesc:ga519fdd17f3ec0ed9fe0c8b1a858c8b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWMInput_GetInput 获取捕获到的脉冲宽度  <a href="#ga519fdd17f3ec0ed9fe0c8b1a858c8b68">More...</a><br /></td></tr>
 <tr class="separator:ga519fdd17f3ec0ed9fe0c8b1a858c8b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -113,10 +113,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>PWMInput_GetInput Get capture value. </p>
+<p>PWMInput_GetInput 获取捕获到的脉冲宽度 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">readout</td><td>Unit in us,Array for capture value,0~3 mapped to timer1's channel 1 ~ channel 4;4 ~ 7 mapped to timer2's channel 1 ~ channel 4 </td></tr>
+    <tr><td class="paramname">readout</td><td>读取到值的缓冲数组，数值的单位为us，元素0~3为定时器1通道1~4的输入脉宽，元素4~7为定时器2通道1~4的输入脉宽 </td></tr>
   </table>
   </dd>
 </dl>
@@ -147,11 +147,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>PWMInput_Init Init timer for caputre. </p>
+<p>PWMInput_Init 初始化定时器用于捕获脉冲输入 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">timer1</td><td>Capture timer 1 </td></tr>
-    <tr><td class="paramname">timer2</td><td>Capture timer 2 </td></tr>
+    <tr><td class="paramname">timer1</td><td>用于捕获的定时器1 </td></tr>
+    <tr><td class="paramname">timer2</td><td>用于捕获的定时器2 </td></tr>
   </table>
   </dd>
 </dl>

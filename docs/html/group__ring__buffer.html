@@ -87,29 +87,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Macros</h2></td></tr>
 <tr class="memitem:ga214c39ef05216d7d6b739e3046bff1ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga214c39ef05216d7d6b739e3046bff1ff"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#ga214c39ef05216d7d6b739e3046bff1ff">RING_BUFFER_ENTER_CRITICAL</a>()    &#160;&#160;&#160;__disable_irq()</td></tr>
-<tr class="memdesc:ga214c39ef05216d7d6b739e3046bff1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">RING_BUFFER_ENTER_CRITICAL Macro to enter critical mode. <br /></td></tr>
+<tr class="memdesc:ga214c39ef05216d7d6b739e3046bff1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">RING_BUFFER_ENTER_CRITICAL 进入临界模式 <br /></td></tr>
 <tr class="separator:ga214c39ef05216d7d6b739e3046bff1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae52923f90d237a05b6c5680d82e74ed1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae52923f90d237a05b6c5680d82e74ed1"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#gae52923f90d237a05b6c5680d82e74ed1">RING_BUFFER_EXIT_CRITICAL</a>()      &#160;&#160;&#160;__enable_irq()</td></tr>
-<tr class="memdesc:gae52923f90d237a05b6c5680d82e74ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">RING_BUFFER_EXIT_CRITICAL Macro to exit critical mode. <br /></td></tr>
+<tr class="memdesc:gae52923f90d237a05b6c5680d82e74ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">RING_BUFFER_EXIT_CRITICAL 退出临界模式 <br /></td></tr>
 <tr class="separator:gae52923f90d237a05b6c5680d82e74ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga56b178c9b6d6fd90b72d8aee91cb323d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ring_buffer___type_def.html">RingBuffer_TypeDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#ga56b178c9b6d6fd90b72d8aee91cb323d">RingBuffer_Init</a> (uint16_t capacity)</td></tr>
-<tr class="memdesc:ga56b178c9b6d6fd90b72d8aee91cb323d"><td class="mdescLeft">&#160;</td><td class="mdescRight">RingBuffer_Init Construct a new ring buffer.  <a href="#ga56b178c9b6d6fd90b72d8aee91cb323d">More...</a><br /></td></tr>
+<tr class="memdesc:ga56b178c9b6d6fd90b72d8aee91cb323d"><td class="mdescLeft">&#160;</td><td class="mdescRight">RingBuffer_Init 构造一个新的环形缓冲实例  <a href="#ga56b178c9b6d6fd90b72d8aee91cb323d">More...</a><br /></td></tr>
 <tr class="separator:ga56b178c9b6d6fd90b72d8aee91cb323d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga24331e4748ef6e1cc294fd4d55d7b736"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#ga24331e4748ef6e1cc294fd4d55d7b736">RingBuffer_Write</a> (<a class="el" href="struct_ring_buffer___type_def.html">RingBuffer_TypeDef</a> *ring_buffer, uint8_t data)</td></tr>
-<tr class="memdesc:ga24331e4748ef6e1cc294fd4d55d7b736"><td class="mdescLeft">&#160;</td><td class="mdescRight">RingBuffer_Write Write data to buffer.  <a href="#ga24331e4748ef6e1cc294fd4d55d7b736">More...</a><br /></td></tr>
+<tr class="memdesc:ga24331e4748ef6e1cc294fd4d55d7b736"><td class="mdescLeft">&#160;</td><td class="mdescRight">RingBuffer_Write 向环形缓冲中写入数据  <a href="#ga24331e4748ef6e1cc294fd4d55d7b736">More...</a><br /></td></tr>
 <tr class="separator:ga24331e4748ef6e1cc294fd4d55d7b736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4e645f3fcc775d45615e726b31a7f800"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#ga4e645f3fcc775d45615e726b31a7f800">RingBuffer_Read</a> (<a class="el" href="struct_ring_buffer___type_def.html">RingBuffer_TypeDef</a> *ring_buffer)</td></tr>
-<tr class="memdesc:ga4e645f3fcc775d45615e726b31a7f800"><td class="mdescLeft">&#160;</td><td class="mdescRight">RingBuffer_Read Read a data from buffer.  <a href="#ga4e645f3fcc775d45615e726b31a7f800">More...</a><br /></td></tr>
+<tr class="memdesc:ga4e645f3fcc775d45615e726b31a7f800"><td class="mdescLeft">&#160;</td><td class="mdescRight">RingBuffer_Read 从环形缓冲中读取一个数据  <a href="#ga4e645f3fcc775d45615e726b31a7f800">More...</a><br /></td></tr>
 <tr class="separator:ga4e645f3fcc775d45615e726b31a7f800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1651e202ca2c8ecc03b234948816c8d8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#ga1651e202ca2c8ecc03b234948816c8d8">RingBuffer_Used</a> (<a class="el" href="struct_ring_buffer___type_def.html">RingBuffer_TypeDef</a> *ring_buffer)</td></tr>
-<tr class="memdesc:ga1651e202ca2c8ecc03b234948816c8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">RingBuffer_Used Get the data numbers in buffer.  <a href="#ga1651e202ca2c8ecc03b234948816c8d8">More...</a><br /></td></tr>
+<tr class="memdesc:ga1651e202ca2c8ecc03b234948816c8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">RingBuffer_Used 获取环形缓冲已经使用的容量  <a href="#ga1651e202ca2c8ecc03b234948816c8d8">More...</a><br /></td></tr>
 <tr class="separator:ga1651e202ca2c8ecc03b234948816c8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6d3f4a0e984e06f12f2ce0a3526b3ab3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#ga6d3f4a0e984e06f12f2ce0a3526b3ab3">RingBuffer_Clear</a> (<a class="el" href="struct_ring_buffer___type_def.html">RingBuffer_TypeDef</a> *ring_buffer)</td></tr>
-<tr class="memdesc:ga6d3f4a0e984e06f12f2ce0a3526b3ab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">RingBuffer_Clear Clear buffer.  <a href="#ga6d3f4a0e984e06f12f2ce0a3526b3ab3">More...</a><br /></td></tr>
+<tr class="memdesc:ga6d3f4a0e984e06f12f2ce0a3526b3ab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">RingBuffer_Clear 清除缓冲区  <a href="#ga6d3f4a0e984e06f12f2ce0a3526b3ab3">More...</a><br /></td></tr>
 <tr class="separator:ga6d3f4a0e984e06f12f2ce0a3526b3ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -128,10 +128,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>RingBuffer_Clear Clear buffer. </p>
+<p>RingBuffer_Clear 清除缓冲区 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ring_buffer</td><td>Ring buffer instance </td></tr>
+    <tr><td class="paramname">ring_buffer</td><td>要清除的缓冲的实例 </td></tr>
   </table>
   </dd>
 </dl>
@@ -152,14 +152,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>RingBuffer_Init Construct a new ring buffer. </p>
+<p>RingBuffer_Init 构造一个新的环形缓冲实例 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">capacity</td><td>The buffer size allocated for the buffer pool </td></tr>
+    <tr><td class="paramname">capacity</td><td>要给缓冲池分配的容量大小，单位为字节 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to ring buffer instance </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>环形缓冲实例的指针 </dd></dl>
 
 </div>
 </div>
@@ -177,10 +177,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>RingBuffer_Read Read a data from buffer. </p>
+<p>RingBuffer_Read 从环形缓冲中读取一个数据 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ring_buffer</td><td>Buffer instance </td></tr>
+    <tr><td class="paramname">ring_buffer</td><td>环形缓冲的指针 </td></tr>
   </table>
   </dd>
 </dl>
@@ -202,10 +202,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>RingBuffer_Used Get the data numbers in buffer. </p>
+<p>RingBuffer_Used 获取环形缓冲已经使用的容量 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ring_buffer</td><td>Buffer instance </td></tr>
+    <tr><td class="paramname">ring_buffer</td><td>环形缓冲的实例指针 </td></tr>
   </table>
   </dd>
 </dl>
@@ -237,11 +237,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>RingBuffer_Write Write data to buffer. </p>
+<p>RingBuffer_Write 向环形缓冲中写入数据 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ring_buffer</td><td>Ring buffer instance </td></tr>
-    <tr><td class="paramname">data</td><td>Data to be wrote </td></tr>
+    <tr><td class="paramname">ring_buffer</td><td>环形缓冲的指针 </td></tr>
+    <tr><td class="paramname">data</td><td>将要写入的数据 </td></tr>
   </table>
   </dd>
 </dl>

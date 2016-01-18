@@ -5,7 +5,7 @@
 
 /*!
   *
-  * @defgroup mpu6050_driver MPU6050 Driver
+  * @defgroup mpu6050_driver MPU6050 驱动
   * @{
   */
 
@@ -13,21 +13,21 @@
 #include "MPU6050.h"
 
 /*!
- * \brief iic_handle Internal handle for iic bus
+ * \brief iic_handle 内部句柄，指向挂载传感器的IIC总线
  */
 static I2C_HandleTypeDef * iic_handle = NULL;
 
-#define MPU6050_IIC_ADDRESS     0xD0        ///< Chip's iic address
-#define MPU6050_GYRO_SCALE      32.8f       ///< Gyro data scaler
-#define MPU6050_ACCE_SCALE      4096.0f     ///< Acce data scaler
-#define MPU6050_CHIP_ID         0x68        ///< Chip's id code
-#define MPU6050_REG_ID_ADDR     0x75        ///< Chip's id register's address
-#define MPU6050_REG_DATA_ADDR   0x3B        ///< Data registers' address
-#define MPU6050_REG_DATA_LENGTH 14          ///< How many data registers to be read
-#define MPU6050_REG_ADDR_WIDTH  1           ///< width of chip's register address
+#define MPU6050_IIC_ADDRESS     0xD0        ///< 芯片的IIC地址，参见其数据手册
+#define MPU6050_GYRO_SCALE      32.8f       ///< 陀螺仪的数据缩放比例
+#define MPU6050_ACCE_SCALE      4096.0f     ///< 加速度计的数据缩放比例
+#define MPU6050_CHIP_ID         0x68        ///< 芯片的ID
+#define MPU6050_REG_ID_ADDR     0x75        ///< 芯片ID寄存器的地址
+#define MPU6050_REG_DATA_ADDR   0x3B        ///< 数据寄存器的起始地址
+#define MPU6050_REG_DATA_LENGTH 14          ///< 将要读取的数据的长度，单位为byte
+#define MPU6050_REG_ADDR_WIDTH  1           ///< 寄存器地址的宽度，单位为byte
 
 /*!
- *\brief Configure table of the chip,for more informatin please refer to its datasheet
+ *\brief 传感器的配置表，左边为寄存器地址，右边为具体的配置值
  */
 
 static uint8_t MPU_CONFIG_TABLE[] = {
@@ -40,9 +40,9 @@ static uint8_t MPU_CONFIG_TABLE[] = {
 };
 
 /*!
- * \brief MPU6050_Init Initialize the MPU6050 MEMS sensor
- * \param handle    Handle pointed to the IIC bus
- * \return  Return true if init succeed
+ * \brief MPU6050_Init 初始化传感器
+ * \param handle    挂载传感器的IIC总线的句柄
+ * \return  如果初始化成功，返回true
  */
 
 bool MPU6050_Init(I2C_HandleTypeDef * handle)
@@ -75,10 +75,10 @@ bool MPU6050_Init(I2C_HandleTypeDef * handle)
 }
 
 /*!
- * \brief MPU6050_Update    Get newest data from sensor
- * \param axis  Axis array contains 6 data ,0 - 2 mapped to AcceX - AcceY - AcceZ,3-5 mapped to GyroX-GyroY-GyroZ
- * \param temp  Pointed to temperature,if don't need,use NULL.
- * \return  If read succeed,return true
+ * \brief MPU6050_Update    从传感器中读取最新的数据
+ * \param axis  本数组长度为6，元素0~2对应于加速度计的X,Y,Z三个轴；元素3~5对应于陀螺仪的X,Y,Z三个轴
+ * \param temp 读取传感器的温度，如果不需要，将本参数设置为NULL
+ * \return  如果初始化成功，返回true
  */
 
 bool MPU6050_Update(float axis[6], float * temp)
@@ -95,19 +95,19 @@ bool MPU6050_Update(float axis[6], float * temp)
     {
         *temp = (int16_t)((tmp[6] << 8) + tmp[7]) / 340.0f + 36.53f;
     }
-    
+
     axis[0] = (int16_t)((tmp[0] << 8) | tmp[1]);
     axis[1] = (int16_t)((tmp[2] << 8) | tmp[3]);
     axis[2] = (int16_t)((tmp[4] << 8) | tmp[5]);
     axis[3] = (int16_t)((tmp[8] << 8) | tmp[9]);
     axis[4] = (int16_t)((tmp[10] << 8) | tmp[11]);
     axis[5] = (int16_t)((tmp[12] << 8) | tmp[13]);
-    
+
     //Acce data normalize ~ x,y,z
     axis[0] /= MPU6050_ACCE_SCALE;
     axis[1] /= MPU6050_ACCE_SCALE;
     axis[2] /= MPU6050_ACCE_SCALE;
-    
+
     //Gyro data normalize ~ x,y,z
     axis[3] /= MPU6050_GYRO_SCALE;
     axis[4] /= MPU6050_GYRO_SCALE;

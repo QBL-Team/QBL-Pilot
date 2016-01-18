@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>QBL-Pilot: MS5611 Driver Private</title>
+<title>QBL-Pilot: MS5611 驱动内部</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">MS5611 Driver Private<div class="ingroups"><a class="el" href="group__ms5611__driver.html">MS5611 Driver</a></div></div>  </div>
+<div class="title">MS5611 驱动内部<div class="ingroups"><a class="el" href="group__ms5611__driver.html">MS5611 驱动</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
@@ -88,15 +88,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Macros</h2></td></tr>
 <tr class="memitem:ga19d654b7fe25f979f90cc4e908156cb5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga19d654b7fe25f979f90cc4e908156cb5"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga19d654b7fe25f979f90cc4e908156cb5">MS5611_CS_On</a>()  &#160;&#160;&#160;HAL_GPIO_WritePin(MS5611_CS_GPIO_Port,MS5611_CS_Pin,GPIO_PIN_RESET)</td></tr>
-<tr class="memdesc:ga19d654b7fe25f979f90cc4e908156cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip select enable. <br /></td></tr>
+<tr class="memdesc:ga19d654b7fe25f979f90cc4e908156cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">开启芯片片选 <br /></td></tr>
 <tr class="separator:ga19d654b7fe25f979f90cc4e908156cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga132d44bdafc80a7ef5259734dc4547c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga132d44bdafc80a7ef5259734dc4547c2"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga132d44bdafc80a7ef5259734dc4547c2">MS5611_CS_Off</a>()&#160;&#160;&#160;HAL_GPIO_WritePin(MS5611_CS_GPIO_Port,MS5611_CS_Pin,GPIO_PIN_SET)</td></tr>
-<tr class="memdesc:ga132d44bdafc80a7ef5259734dc4547c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip select disable. <br /></td></tr>
+<tr class="memdesc:ga132d44bdafc80a7ef5259734dc4547c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">关闭芯片片选 <br /></td></tr>
 <tr class="separator:ga132d44bdafc80a7ef5259734dc4547c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabae8b9d1a17f48b416cc3881bb954ca2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabae8b9d1a17f48b416cc3881bb954ca2"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#gabae8b9d1a17f48b416cc3881bb954ca2">MS5611_CONVERSION_TIME</a>&#160;&#160;&#160;10</td></tr>
-<tr class="memdesc:gabae8b9d1a17f48b416cc3881bb954ca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip conversion time , ms. <br /></td></tr>
+<tr class="memdesc:gabae8b9d1a17f48b416cc3881bb954ca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">芯片的转换时间，单位为ms <br /></td></tr>
 <tr class="separator:gabae8b9d1a17f48b416cc3881bb954ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -111,43 +111,43 @@ Enumerations</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:gafa5b8ac64374d19d8f1e5d8e2b94b73c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafa5b8ac64374d19d8f1e5d8e2b94b73c"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#gafa5b8ac64374d19d8f1e5d8e2b94b73c">MS5611_CMD_RST</a> [] = { 0x1E }</td></tr>
-<tr class="memdesc:gafa5b8ac64374d19d8f1e5d8e2b94b73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for reset device. <br /></td></tr>
+<tr class="memdesc:gafa5b8ac64374d19d8f1e5d8e2b94b73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置芯片 <br /></td></tr>
 <tr class="separator:gafa5b8ac64374d19d8f1e5d8e2b94b73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab1acc41277710ab70dc70946ca8e1819"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab1acc41277710ab70dc70946ca8e1819"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#gab1acc41277710ab70dc70946ca8e1819">MS5611_CMD_CONVERT_D1</a> [] = { 0x48 }</td></tr>
-<tr class="memdesc:gab1acc41277710ab70dc70946ca8e1819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for convert pressure with OSR 4096. <br /></td></tr>
+<tr class="memdesc:gab1acc41277710ab70dc70946ca8e1819"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置过采样率为4096转换气压值 <br /></td></tr>
 <tr class="separator:gab1acc41277710ab70dc70946ca8e1819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae1a9a783b78f3d8b8ab20357243b1d2f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae1a9a783b78f3d8b8ab20357243b1d2f"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#gae1a9a783b78f3d8b8ab20357243b1d2f">MS5611_CMD_CONVERT_D2</a> [] = {0x58}</td></tr>
-<tr class="memdesc:gae1a9a783b78f3d8b8ab20357243b1d2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for convert temperature with OSR 4096. <br /></td></tr>
+<tr class="memdesc:gae1a9a783b78f3d8b8ab20357243b1d2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置过采样率为4096转换温度值 <br /></td></tr>
 <tr class="separator:gae1a9a783b78f3d8b8ab20357243b1d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga12183abd8008830f5d763fc8400d414c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga12183abd8008830f5d763fc8400d414c"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga12183abd8008830f5d763fc8400d414c">MS5611_CMD_READ_ADC</a> [] = {0x00}</td></tr>
-<tr class="memdesc:ga12183abd8008830f5d763fc8400d414c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read adc result. <br /></td></tr>
+<tr class="memdesc:ga12183abd8008830f5d763fc8400d414c"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取模数转换器转换结果 <br /></td></tr>
 <tr class="separator:ga12183abd8008830f5d763fc8400d414c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6555aca305c73b423aec8ad7ff75e063"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga6555aca305c73b423aec8ad7ff75e063"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga6555aca305c73b423aec8ad7ff75e063">MS5611_CMD_READ_C1</a> [] = {0xA2}</td></tr>
-<tr class="memdesc:ga6555aca305c73b423aec8ad7ff75e063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C1. <br /></td></tr>
+<tr class="memdesc:ga6555aca305c73b423aec8ad7ff75e063"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取出厂预设值C1 <br /></td></tr>
 <tr class="separator:ga6555aca305c73b423aec8ad7ff75e063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga433d78a7f1e4e7c6bea1d15c551f6273"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga433d78a7f1e4e7c6bea1d15c551f6273"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga433d78a7f1e4e7c6bea1d15c551f6273">MS5611_CMD_READ_C2</a> [] = {0xA4}</td></tr>
-<tr class="memdesc:ga433d78a7f1e4e7c6bea1d15c551f6273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C2. <br /></td></tr>
+<tr class="memdesc:ga433d78a7f1e4e7c6bea1d15c551f6273"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取出厂预设值C2 <br /></td></tr>
 <tr class="separator:ga433d78a7f1e4e7c6bea1d15c551f6273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2fffdcd4e827763dc9344b49a1833f69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga2fffdcd4e827763dc9344b49a1833f69"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga2fffdcd4e827763dc9344b49a1833f69">MS5611_CMD_READ_C3</a> [] = {0xA6}</td></tr>
-<tr class="memdesc:ga2fffdcd4e827763dc9344b49a1833f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C3. <br /></td></tr>
+<tr class="memdesc:ga2fffdcd4e827763dc9344b49a1833f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取出厂预设值C3 <br /></td></tr>
 <tr class="separator:ga2fffdcd4e827763dc9344b49a1833f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga90b99ee2918d8d5163654e78ab25738c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga90b99ee2918d8d5163654e78ab25738c"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga90b99ee2918d8d5163654e78ab25738c">MS5611_CMD_READ_C4</a> [] = {0xA8}</td></tr>
-<tr class="memdesc:ga90b99ee2918d8d5163654e78ab25738c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C4. <br /></td></tr>
+<tr class="memdesc:ga90b99ee2918d8d5163654e78ab25738c"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取出厂预设值C4 <br /></td></tr>
 <tr class="separator:ga90b99ee2918d8d5163654e78ab25738c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafd13f5a06daa45df48f2c61a2f747fb3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafd13f5a06daa45df48f2c61a2f747fb3"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#gafd13f5a06daa45df48f2c61a2f747fb3">MS5611_CMD_READ_C5</a> [] = {0xAA}</td></tr>
-<tr class="memdesc:gafd13f5a06daa45df48f2c61a2f747fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C5. <br /></td></tr>
+<tr class="memdesc:gafd13f5a06daa45df48f2c61a2f747fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取出厂预设值C5 <br /></td></tr>
 <tr class="separator:gafd13f5a06daa45df48f2c61a2f747fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga27544c59b693ee1160b49dd80577fedb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga27544c59b693ee1160b49dd80577fedb"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ms5611__driver__internal.html#ga27544c59b693ee1160b49dd80577fedb">MS5611_CMD_READ_C6</a> [] = {0xAC}</td></tr>
-<tr class="memdesc:ga27544c59b693ee1160b49dd80577fedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command code for read PROM C6. <br /></td></tr>
+<tr class="memdesc:ga27544c59b693ee1160b49dd80577fedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取出厂预设值C6 <br /></td></tr>
 <tr class="separator:ga27544c59b693ee1160b49dd80577fedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -161,16 +161,16 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
         </tr>
       </table>
 </div><div class="memdoc">
-<p>State flag for reading process </p>
+<p>读取过程的状态标志 </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga87a0c5ca64ec1e29ddc31ab17c5f5022a6d4551647d3829b1242a8969b23fb734"></a>MS5611_STATE_IDLE&#160;</td><td class="fielddoc">
-<p>After powered,default in this state. </p>
+<p>上电之后，默认处于本状态 </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="gga87a0c5ca64ec1e29ddc31ab17c5f5022a4db01813fd057df7b345979e2edc8065"></a>MS5611_STATE_WAIT_FOR_D1&#160;</td><td class="fielddoc">
-<p>Wait for pressure convertion. </p>
+<p>等待气压转换操作 </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="gga87a0c5ca64ec1e29ddc31ab17c5f5022a570e87eedddd77822a83145040fc920c"></a>MS5611_STATE_WAIT_FOR_D2&#160;</td><td class="fielddoc">
-<p>Wait for temperatue convertion. </p>
+<p>等待温度转换操作 </p>
 </td></tr>
 </table>
 

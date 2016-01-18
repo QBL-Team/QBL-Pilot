@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>QBL-Pilot: PWM Output</title>
+<title>QBL-Pilot: PWM Output 驱动</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,21 +78,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">PWM Output</div>  </div>
+<div class="title">PWM Output 驱动</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga3c1477a43a395a87f2024c47bf82238a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pwm__output.html#ga3c1477a43a395a87f2024c47bf82238a">PWMOutput_Init</a> (TIM_HandleTypeDef *tim1, TIM_HandleTypeDef *tim2)</td></tr>
-<tr class="memdesc:ga3c1477a43a395a87f2024c47bf82238a"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWMOutput_Init Init the pwm output module.  <a href="#ga3c1477a43a395a87f2024c47bf82238a">More...</a><br /></td></tr>
+<tr class="memdesc:ga3c1477a43a395a87f2024c47bf82238a"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWMOutput_Init 初始化定时器，用于PWM脉冲输出  <a href="#ga3c1477a43a395a87f2024c47bf82238a">More...</a><br /></td></tr>
 <tr class="separator:ga3c1477a43a395a87f2024c47bf82238a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa1286e948ac97354695c20c26a94c0ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pwm__output.html#gaa1286e948ac97354695c20c26a94c0ad">PWMOutput_Apply</a> (uint16_t output[8])</td></tr>
-<tr class="memdesc:gaa1286e948ac97354695c20c26a94c0ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWMOutput_Apply Apply new output for all 8 channel.  <a href="#gaa1286e948ac97354695c20c26a94c0ad">More...</a><br /></td></tr>
+<tr class="memdesc:gaa1286e948ac97354695c20c26a94c0ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWMOutput_Apply 应用输出到定时器的各通道  <a href="#gaa1286e948ac97354695c20c26a94c0ad">More...</a><br /></td></tr>
 <tr class="separator:gaa1286e948ac97354695c20c26a94c0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga32b188e507459a010cada0a1657e808e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga32b188e507459a010cada0a1657e808e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pwm__output.html#ga32b188e507459a010cada0a1657e808e">PWMOUTPUT_BASE</a>&#160;&#160;&#160;20999</td></tr>
-<tr class="memdesc:ga32b188e507459a010cada0a1657e808e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base value of output. <br /></td></tr>
+<tr class="memdesc:ga32b188e507459a010cada0a1657e808e"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出的基准值 <br /></td></tr>
 <tr class="separator:ga32b188e507459a010cada0a1657e808e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -111,10 +111,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>PWMOutput_Apply Apply new output for all 8 channel. </p>
+<p>PWMOutput_Apply 应用输出到定时器的各通道 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">output</td><td>Range from 0 ~ 21000,mapped to 1ms ~ 2ms. </td></tr>
+    <tr><td class="paramname">output</td><td>范围为0 ~ 21000,对应着脉冲宽度1ms ~ 2ms，元素0~3对应定时器1的通道1到通道4，元素4~7对应定时器2的通道1到通道4 </td></tr>
   </table>
   </dd>
 </dl>
@@ -145,11 +145,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>PWMOutput_Init Init the pwm output module. </p>
+<p>PWMOutput_Init 初始化定时器，用于PWM脉冲输出 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tim1</td><td>Timer handle of first 4 channels </td></tr>
-    <tr><td class="paramname">tim2</td><td>Timer handle of other 4 channels </td></tr>
+    <tr><td class="paramname">tim1</td><td>用于输出的定时器1 </td></tr>
+    <tr><td class="paramname">tim2</td><td>用于输出的定时器2 </td></tr>
   </table>
   </dd>
 </dl>

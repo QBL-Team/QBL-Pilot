@@ -10,16 +10,16 @@
 #include <stdlib.h>
 
 /*!
- * \brief Ring buffer instance type defination
+ * \brief 环形缓冲实例的数据定义
  */
 
 typedef struct
 {
-    uint16_t write_index;        //!<Write postion index
-    uint16_t read_index;         //!<Read postion index
-    uint8_t * buffer;            //!<Ring buffer pool
-    uint16_t buffer_capacity;    //!<The capacity of the ring buffer
-    uint16_t used_size;          //!<The buffered data's counts
+    uint16_t write_index;        //!<写地址索引
+    uint16_t read_index;         //!<读地址索引
+    uint8_t * buffer;            //!<缓冲池
+    uint16_t buffer_capacity;    //!<容量大小，单位为字节
+    uint16_t used_size;          //!<已经使用的缓冲区的大小
 }RingBuffer_TypeDef;
 
 /*!

@@ -5,8 +5,8 @@
 #include "TimeMeter.h"
 #include <stddef.h>
 
-static TIM_HandleTypeDef * timer_handle = NULL; ///< Internal timer handle for measure
-static uint32_t timer_update_cycle = 0; ///< Overrun times after start measure
+static TIM_HandleTypeDef * timer_handle = NULL;
+static uint32_t timer_update_cycle = 0; ///< 定时器溢出的次数
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {

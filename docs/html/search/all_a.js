@@ -1,7 +1,7 @@
 var searchData=
 [
   ['w25q_5fcheckforidle',['W25Q_CheckForIdle',['../group__w25qxx__driver.html#gae093638f293862b588ee0b060d346b2f',1,'W25Q_CheckForIdle(void):&#160;W25QXX.c'],['../group__w25qxx__driver.html#gae093638f293862b588ee0b060d346b2f',1,'W25Q_CheckForIdle(void):&#160;W25QXX.c']]],
-  ['w25q_5ferasechp',['W25Q_EraseChp',['../group__w25qxx__driver.html#ga9d7f08f62bd17c0473385558d111f910',1,'W25Q_EraseChp(void):&#160;W25QXX.c'],['../group__w25qxx__driver.html#ga9d7f08f62bd17c0473385558d111f910',1,'W25Q_EraseChp(void):&#160;W25QXX.c']]],
+  ['w25q_5ferasechip',['W25Q_EraseChip',['../group__w25qxx__driver.html#ga44ab24b314a5da3187a6e9a4642007fb',1,'W25Q_EraseChip(void):&#160;W25QXX.c'],['../group__w25qxx__driver.html#ga44ab24b314a5da3187a6e9a4642007fb',1,'W25Q_EraseChip(void):&#160;W25QXX.c']]],
   ['w25q_5ferasesector',['W25Q_EraseSector',['../group__w25qxx__driver.html#ga8508fa9b85d13add4ca7f86a1df0344f',1,'W25Q_EraseSector(uint32_t addr):&#160;W25QXX.c'],['../group__w25qxx__driver.html#ga8508fa9b85d13add4ca7f86a1df0344f',1,'W25Q_EraseSector(uint32_t addr):&#160;W25QXX.c']]],
   ['w25q_5finit',['W25Q_Init',['../group__w25qxx__driver.html#gaf905c97c7065e76abcac1dae07825236',1,'W25Q_Init(SPI_HandleTypeDef *handle):&#160;W25QXX.c'],['../group__w25qxx__driver.html#gaf905c97c7065e76abcac1dae07825236',1,'W25Q_Init(SPI_HandleTypeDef *handle):&#160;W25QXX.c']]],
   ['w25q_5fread',['W25Q_Read',['../group__w25qxx__driver.html#ga5902ef8b3c02924335909790a80f2ef7',1,'W25Q_Read(uint32_t addr, uint8_t *buffer, uint16_t length):&#160;W25QXX.c'],['../group__w25qxx__driver.html#ga5902ef8b3c02924335909790a80f2ef7',1,'W25Q_Read(uint32_t addr, uint8_t *buffer, uint16_t length):&#160;W25QXX.c']]],
@@ -22,8 +22,8 @@ var searchData=
   ['w25qxx_5fcmd_5fwrite_5fenable',['W25QXX_CMD_WRITE_ENABLE',['../group__w25qxx__driver__private.html#ga41bb508b760fa5ecde2b81f6cad01a07',1,'W25QXX.c']]],
   ['w25qxx_5fcs_5foff',['W25QXX_CS_OFF',['../group__w25qxx__driver__private.html#ga407630f26fb259d94f6b116d4b84d22c',1,'W25QXX.c']]],
   ['w25qxx_5fcs_5fon',['W25QXX_CS_ON',['../group__w25qxx__driver__private.html#ga9002b15d08aa46429f47f941fe1c4323',1,'W25QXX.c']]],
-  ['w25qxx_20driver',['W25QXX Driver',['../group__w25qxx__driver.html',1,'']]],
-  ['w25qxx_20driver_20private',['W25QXX Driver Private',['../group__w25qxx__driver__private.html',1,'']]],
+  ['w25qxx_20驱动',['W25QXX 驱动',['../group__w25qxx__driver.html',1,'']]],
+  ['w25qxx_20驱动内部数据',['W25QXX 驱动内部数据',['../group__w25qxx__driver__private.html',1,'']]],
   ['w25qxx_5fwrite_5fenable_5fmask',['W25QXX_WRITE_ENABLE_MASK',['../group__w25qxx__driver__private.html#ga1df06cbdef512bc60a5ded8636a98a5a',1,'W25QXX.c']]],
   ['write_5findex',['write_index',['../struct_ring_buffer___type_def.html#a47824dc6fb6fa74d1648f1cc5b177a4f',1,'RingBuffer_TypeDef']]]
 ];

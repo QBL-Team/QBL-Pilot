@@ -85,14 +85,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gabcb0112a4c44df46d08462cafedd5548"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__meter.html#gabcb0112a4c44df46d08462cafedd5548">TimeMeter_Init</a> (TIM_HandleTypeDef *handle)</td></tr>
-<tr class="memdesc:gabcb0112a4c44df46d08462cafedd5548"><td class="mdescLeft">&#160;</td><td class="mdescRight">TimeMeter_Init Initialize the time meter module.  <a href="#gabcb0112a4c44df46d08462cafedd5548">More...</a><br /></td></tr>
+<tr class="memdesc:gabcb0112a4c44df46d08462cafedd5548"><td class="mdescLeft">&#160;</td><td class="mdescRight">TimeMeter_Init 初始化定时器模块  <a href="#gabcb0112a4c44df46d08462cafedd5548">More...</a><br /></td></tr>
 <tr class="separator:gabcb0112a4c44df46d08462cafedd5548"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf9d13da5605d54c975070a7d0526ae0e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaf9d13da5605d54c975070a7d0526ae0e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__meter.html#gaf9d13da5605d54c975070a7d0526ae0e">TimeMeter_StartMeasure</a> (void)</td></tr>
-<tr class="memdesc:gaf9d13da5605d54c975070a7d0526ae0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">TimeMeter_StartMeasure Start time measure. <br /></td></tr>
+<tr class="memdesc:gaf9d13da5605d54c975070a7d0526ae0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">TimeMeter_StartMeasure 启动测量 <br /></td></tr>
 <tr class="separator:gaf9d13da5605d54c975070a7d0526ae0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa083e00c7d94263ce4f8ec5f91f035d0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__meter.html#gaa083e00c7d94263ce4f8ec5f91f035d0">TimeMeter_StopMeasure</a> (void)</td></tr>
-<tr class="memdesc:gaa083e00c7d94263ce4f8ec5f91f035d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">TimeMeter_StopMeasure Stop measure and get time.  <a href="#gaa083e00c7d94263ce4f8ec5f91f035d0">More...</a><br /></td></tr>
+<tr class="memdesc:gaa083e00c7d94263ce4f8ec5f91f035d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">TimeMeter_StopMeasure 停止测量并返回测量值  <a href="#gaa083e00c7d94263ce4f8ec5f91f035d0">More...</a><br /></td></tr>
 <tr class="separator:gaa083e00c7d94263ce4f8ec5f91f035d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -111,10 +111,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
       </table>
 </div><div class="memdoc">
 
-<p>TimeMeter_Init Initialize the time meter module. </p>
+<p>TimeMeter_Init 初始化定时器模块 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">handle</td><td>Timer instance to be used for measure </td></tr>
+    <tr><td class="paramname">handle</td><td>用于测量时间的定时器句柄 </td></tr>
   </table>
   </dd>
 </dl>
@@ -135,8 +135,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
       </table>
 </div><div class="memdoc">
 
-<p>TimeMeter_StopMeasure Stop measure and get time. </p>
-<dl class="section return"><dt>Returns</dt><dd>Time after <a class="el" href="group__time__meter.html#gaf9d13da5605d54c975070a7d0526ae0e" title="TimeMeter_StartMeasure Start time measure. ">TimeMeter_StartMeasure()</a> called,unit in 0.25 us </dd></dl>
+<p>TimeMeter_StopMeasure 停止测量并返回测量值 </p>
+<dl class="section return"><dt>Returns</dt><dd>函数 <a class="el" href="group__time__meter.html#gaf9d13da5605d54c975070a7d0526ae0e" title="TimeMeter_StartMeasure 启动测量 ">TimeMeter_StartMeasure()</a> 被执行后到此刻为止经历的时间,数值的单位为0.25us,如果返回1000，那么真实事件为1000 * 0.25us = 250us </dd></dl>
 
 </div>
 </div>

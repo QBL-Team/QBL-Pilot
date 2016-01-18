@@ -6,7 +6,7 @@
 
 /*!
   *
-  * @defgroup ms5611_driver MS5611 Driver
+  * @defgroup ms5611_driver MS5611 驱动
   * @{
   */
 
@@ -14,71 +14,71 @@
 #include "MS5611.h"
 
 /*!
- * @defgroup ms5611_driver_internal MS5611 Driver Private
+ * @defgroup ms5611_driver_internal MS5611 驱动内部
  * @{
  */
 
-#define MS5611_CS_On()   HAL_GPIO_WritePin(MS5611_CS_GPIO_Port,MS5611_CS_Pin,GPIO_PIN_RESET)    ///< Chip select enable
-#define MS5611_CS_Off()  HAL_GPIO_WritePin(MS5611_CS_GPIO_Port,MS5611_CS_Pin,GPIO_PIN_SET)      ///< Chip select disable
-#define MS5611_CONVERSION_TIME  10                       ///< Chip conversion time , ms
+#define MS5611_CS_On()   HAL_GPIO_WritePin(MS5611_CS_GPIO_Port,MS5611_CS_Pin,GPIO_PIN_RESET)    ///< 开启芯片片选
+#define MS5611_CS_Off()  HAL_GPIO_WritePin(MS5611_CS_GPIO_Port,MS5611_CS_Pin,GPIO_PIN_SET)      ///< 关闭芯片片选
+#define MS5611_CONVERSION_TIME  10                       ///< 芯片的转换时间，单位为ms
 
 
 
-const uint8_t MS5611_CMD_RST[]            = { 0x1E }; ///< Command code for reset device
-const uint8_t MS5611_CMD_CONVERT_D1[]     = { 0x48 }; ///< Command code for convert pressure with OSR 4096
-const uint8_t MS5611_CMD_CONVERT_D2[]     = {0x58}; ///< Command code for convert temperature with OSR 4096
-const uint8_t MS5611_CMD_READ_ADC[]       = {0x00}; ///< Command code for read adc result
-const uint8_t MS5611_CMD_READ_C1[]        = {0xA2}; ///< Command code for read PROM C1
-const uint8_t MS5611_CMD_READ_C2[]        = {0xA4}; ///< Command code for read PROM C2
-const uint8_t MS5611_CMD_READ_C3[]        = {0xA6}; ///< Command code for read PROM C3
-const uint8_t MS5611_CMD_READ_C4[]        = {0xA8}; ///< Command code for read PROM C4
-const uint8_t MS5611_CMD_READ_C5[]        = {0xAA}; ///< Command code for read PROM C5
-const uint8_t MS5611_CMD_READ_C6[]        = {0xAC}; ///< Command code for read PROM C6
+const uint8_t MS5611_CMD_RST[]            = { 0x1E }; ///< 重置芯片
+const uint8_t MS5611_CMD_CONVERT_D1[]     = { 0x48 }; ///< 设置过采样率为4096转换气压值
+const uint8_t MS5611_CMD_CONVERT_D2[]     = {0x58}; ///< 设置过采样率为4096转换温度值
+const uint8_t MS5611_CMD_READ_ADC[]       = {0x00}; ///< 读取模数转换器转换结果
+const uint8_t MS5611_CMD_READ_C1[]        = {0xA2}; ///< 读取出厂预设值C1
+const uint8_t MS5611_CMD_READ_C2[]        = {0xA4}; ///< 读取出厂预设值C2
+const uint8_t MS5611_CMD_READ_C3[]        = {0xA6}; ///< 读取出厂预设值C3
+const uint8_t MS5611_CMD_READ_C4[]        = {0xA8}; ///< 读取出厂预设值C4
+const uint8_t MS5611_CMD_READ_C5[]        = {0xAA}; ///< 读取出厂预设值C5
+const uint8_t MS5611_CMD_READ_C6[]        = {0xAC}; ///< 读取出厂预设值C6
 
 
-static uint32_t ms_ticks = 0;   ///<Time stamp for reading operation
+static uint32_t ms_ticks = 0;   ///< 读取操作的时间戳，单位为ms
 
-static int64_t c1 = 0;      ///<PROM code C1,Pressure sensitivity | SENS T1
-static int64_t c2 = 0;      ///<PROM code C2,Pressure offset | OFF T1
-static int64_t c3 = 0;      ///<PROM code C3,Temperature coefficient of pressure sensitivity | TCS
-static int64_t c4 = 0;      ///<PROM code C4,Temperature coefficient of pressure offset | TCO
-static int64_t c5 = 0;      ///<PROM code C5,Reference temperature | T REF
-static int64_t c6 = 0;      ///<PROM code C6,Temperature coefficient of the temperature | TEMPSENS
+static int64_t c1 = 0;      ///<出厂预设值C1,压力灵敏度 | SENS T1
+static int64_t c2 = 0;      ///<出厂预设值C2,压力偏移值 | OFF T1
+static int64_t c3 = 0;      ///<出厂预设值C3,传感器灵敏度的温度系数 | TCS
+static int64_t c4 = 0;      ///<出厂预设值C4,压力偏移的温度系数 | TCO
+static int64_t c5 = 0;      ///<出厂预设值C5,参考温度 | T REF
+static int64_t c6 = 0;      ///<出厂预设值C6,温度的校正系数 | TEMPSENS
 
-static int64_t d1 = 0;      ///< Digital pressure value
-static int64_t d2 = 0;      ///< Digital temperature value
+static int64_t d1 = 0;      ///< 压力值
+static int64_t d2 = 0;      ///< 温度值
 
-static int64_t dt = 0;      ///< Difference between actual and reference temperature
-static int64_t temp = 0;    ///< Actual temperature (-40…85°C with 0.01°C resolution)
+static int64_t dt = 0;      ///< 实际温度和参考温度的差值
+static int64_t temp = 0;    ///< 实际温度，范围为-40~85°C，分辨率为0.01°C，例如值为2000，表示20.00°C
 
-static int64_t off = 0;     ///< Offset at actual temperature
-static int64_t sens = 0;    ///< Sensitivity at actual temperature
-static int64_t p = 0;       ///< Temperature compensated pressure (10…1200mbar with 0.01mbar resolution)
+static int64_t off = 0;     ///< 实际温度的偏移
+static int64_t sens = 0;    ///< 实际温度的灵敏度
+static int64_t p = 0;       ///< 温度矫正后的气压值，范围为10~1200mbar，分辨率为0.01mbar，例如值为10000，表示100.00mbr
 
 static int64_t t2 = 0;
 static int64_t off2 = 0;
 static int64_t sens2 = 0;
 
 
-static SPI_HandleTypeDef * spi_handle = NULL; ///< Handle for SPI bus
+static SPI_HandleTypeDef * spi_handle = NULL; ///< 挂载传感器的SPI总线的句柄
 
 /*!
  *\enum MS5611_STATE
- * State flag for reading process
+ * 读取过程的状态标志
  */
 typedef enum
 {
-    MS5611_STATE_IDLE = 0, ///< After powered,default in this state
-    MS5611_STATE_WAIT_FOR_D1,///<Wait for pressure convertion
-    MS5611_STATE_WAIT_FOR_D2,///<Wait for temperatue convertion
+    MS5611_STATE_IDLE = 0, ///< 上电之后，默认处于本状态
+    MS5611_STATE_WAIT_FOR_D1,///<等待气压转换操作
+    MS5611_STATE_WAIT_FOR_D2,///<等待温度转换操作
 } MS5611_STATE;
 
-static MS5611_STATE ms_state;       ///< State variable for reading process
+static MS5611_STATE ms_state;       ///< 读取过程的状态变量
 
 /*!
- * \brief MS5611_ReadPROM   Read a PROM parameter from chip
- * \param MS5611_CMD        Command to determin whick papameter to be read
- * \return Result of reading.
+ * \brief MS5611_ReadPROM   读取芯片的出厂预设值
+ * \param MS5611_CMD        读取预设值的命令代码
+ * \return 读取出来的值
  */
 
 static uint16_t MS5611_ReadPROM(const uint8_t * MS5611_CMD)
@@ -93,8 +93,8 @@ static uint16_t MS5611_ReadPROM(const uint8_t * MS5611_CMD)
 }
 
 /*!
- * \brief MS5611_SendCMD Send a command to chip
- * \param MS5611_CMD    Which command to be sent
+ * \brief MS5611_SendCMD 向芯片发送一条命令
+ * \param MS5611_CMD    将被发送的命令，以MS5611_CMD开头
  */
 static void MS5611_SendCMD(const uint8_t * MS5611_CMD)
 {
@@ -103,7 +103,7 @@ static void MS5611_SendCMD(const uint8_t * MS5611_CMD)
     MS5611_CS_Off();
 }
 /*!
- * \brief MS5611_Compute    Calculate the real pressure and temperature.
+ * \brief MS5611_Compute    在转换和读取完成后，计算温度值和气压值
  */
 static void MS5611_Compute(void)
 {
@@ -144,9 +144,9 @@ static void MS5611_Compute(void)
  */
 
 /*!
- * \brief MS5611_Init Init the sensor,and read PROM values
- * \param handle    Handle of the SPI bus.
- * \return  If init succeed ,return true
+ * \brief MS5611_Init 初始化传感器，并读取出厂预设值，为计算做准备
+ * \param handle    挂载传感器的SPI总线的地址
+ * \return  如果初始化成功，返回true
  */
 
 bool MS5611_Init(SPI_HandleTypeDef * handle)
@@ -179,10 +179,10 @@ bool MS5611_Init(SPI_HandleTypeDef * handle)
 }
 
 /*!
- * \brief MS5611_Update Try to get newest data from sensor,notice that the conversion need some time,only if this function return true,the data is valid.
- * \param Pressure  Pointer pointed to pressure
- * \param Temperature   Pointer pointed to temperature
- * \return  If read succeed,return true
+ * \brief MS5611_Update 尝试读取最新的气压和温度数据
+ * \param Pressure  气压值的指针
+ * \param Temperature   温度值的指针
+ * \return  仅当返回true时读取到的数据有效，请务必检查返回值
  */
 
 bool MS5611_Update(float * Pressure, float * Temperature)

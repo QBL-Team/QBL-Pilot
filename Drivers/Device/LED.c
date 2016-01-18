@@ -7,8 +7,8 @@
 
 /**
  * @ingroup led_driver
- * @brief LED_Show Display a color by LED
- * @param LED_COLOR Which color to be displayed
+ * @brief LED_Show 驱动LED显示颜色
+ * @param LED_COLOR 将要显示的颜色
  * @see LED_COLOR
  */
 

@@ -10,25 +10,25 @@
 #include "stm32f4xx_hal.h"
 
 /**
- * @defgroup led_driver LED Driver
+ * @defgroup led_driver LED 驱动
  * @{
  * @}
  */
 
 /**
  * @ingroup led_driver
- * Color description of LED
+ * 颜色描述符
  */
 
 enum LED_COLOR{
-    LED_COLOR_OFF = 0,      /**< Switch off led */
-    LED_COLOR_WHITE,        /**< Display color white */
-    LED_COLOR_RED,          /**< Display color red */
-    LED_COLOR_GREEN,        /**< Display color green */
-    LED_COLOR_BLUE,         /**< Display color blue */
-    LED_COLOR_FUCHSIN,      /**< Display color fuchsin */
-    LED_COLOR_YELLOW,       /**< Display color yellow */
-    LED_COLOR_CYAN,         /**< Display color cyan */
+    LED_COLOR_OFF = 0,      /**< 关闭显示 */
+    LED_COLOR_WHITE,        /**< 显示白色 */
+    LED_COLOR_RED,          /**< 显示红色 */
+    LED_COLOR_GREEN,        /**< 显示绿色 */
+    LED_COLOR_BLUE,         /**< 显示蓝色 */
+    LED_COLOR_FUCHSIN,      /**< 显示品红 */
+    LED_COLOR_YELLOW,       /**< 显示黄色 */
+    LED_COLOR_CYAN,         /**< 显示青色 */
 };
 
 extern void LED_Show(uint8_t LED_COLOR);

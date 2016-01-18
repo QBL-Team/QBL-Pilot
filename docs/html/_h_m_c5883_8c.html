@@ -98,32 +98,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Macros</h2></td></tr>
 <tr class="memitem:ga6887196e8734d548ab7410e96ef5aed4"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver.html#ga6887196e8734d548ab7410e96ef5aed4">HMC5883_IIC_ADDRESS</a>&#160;&#160;&#160;0x3C</td></tr>
-<tr class="memdesc:ga6887196e8734d548ab7410e96ef5aed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip's iic address. <br /></td></tr>
+<tr class="memdesc:ga6887196e8734d548ab7410e96ef5aed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">芯片的IIC地址，参见其数据手册 <br /></td></tr>
 <tr class="separator:ga6887196e8734d548ab7410e96ef5aed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9c9589bb19e67395e4148d33fcb160e6"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver.html#ga9c9589bb19e67395e4148d33fcb160e6">HMC5883_DATA_SENS</a>&#160;&#160;&#160;440.0f</td></tr>
-<tr class="memdesc:ga9c9589bb19e67395e4148d33fcb160e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data scaler. <br /></td></tr>
+<tr class="memdesc:ga9c9589bb19e67395e4148d33fcb160e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">原始数据到真实数据的缩放比例，参见其数据手册 <br /></td></tr>
 <tr class="separator:ga9c9589bb19e67395e4148d33fcb160e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5af6f3e1f8cb12a7d074b60f6653ee24"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver.html#ga5af6f3e1f8cb12a7d074b60f6653ee24">HMC5883_REG_DATA_ADDR</a>&#160;&#160;&#160;0x03</td></tr>
-<tr class="memdesc:ga5af6f3e1f8cb12a7d074b60f6653ee24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data registers' address. <br /></td></tr>
+<tr class="memdesc:ga5af6f3e1f8cb12a7d074b60f6653ee24"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据寄存器起始地址 <br /></td></tr>
 <tr class="separator:ga5af6f3e1f8cb12a7d074b60f6653ee24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8480f1a530d25b8e4996d376d51a86d7"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver.html#ga8480f1a530d25b8e4996d376d51a86d7">HMC5883_REG_DATA_LENGTH</a>&#160;&#160;&#160;6</td></tr>
-<tr class="memdesc:ga8480f1a530d25b8e4996d376d51a86d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many data registers to be read. <br /></td></tr>
+<tr class="memdesc:ga8480f1a530d25b8e4996d376d51a86d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取的数据量，单位为byte <br /></td></tr>
 <tr class="separator:ga8480f1a530d25b8e4996d376d51a86d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3cc59a009a054a25e6b13ccaa227b4ea"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver.html#ga3cc59a009a054a25e6b13ccaa227b4ea">HMC5883_REG_ADDR_WIDTH</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:ga3cc59a009a054a25e6b13ccaa227b4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">width of chip's register address <br /></td></tr>
+<tr class="memdesc:ga3cc59a009a054a25e6b13ccaa227b4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">寄存器地址的宽度，单位为byte <br /></td></tr>
 <tr class="separator:ga3cc59a009a054a25e6b13ccaa227b4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga3b1955c1ea4d15e35091d2c9b5fc9d45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver.html#ga3b1955c1ea4d15e35091d2c9b5fc9d45">HMC5883_Init</a> (I2C_HandleTypeDef *handle)</td></tr>
-<tr class="memdesc:ga3b1955c1ea4d15e35091d2c9b5fc9d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">HMC5883_Init Initialize the HMC5883.  <a href="group__hmc5883__driver.html#ga3b1955c1ea4d15e35091d2c9b5fc9d45">More...</a><br /></td></tr>
+<tr class="memdesc:ga3b1955c1ea4d15e35091d2c9b5fc9d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">HMC5883_Init 初始化HMC5883L.  <a href="group__hmc5883__driver.html#ga3b1955c1ea4d15e35091d2c9b5fc9d45">More...</a><br /></td></tr>
 <tr class="separator:ga3b1955c1ea4d15e35091d2c9b5fc9d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga510174357ad0bd347beb541bebf7273b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver.html#ga510174357ad0bd347beb541bebf7273b">HMC5883_Update</a> (float axis[3])</td></tr>
-<tr class="memdesc:ga510174357ad0bd347beb541bebf7273b"><td class="mdescLeft">&#160;</td><td class="mdescRight">HMC5883_Update Get newest data from sensor.  <a href="group__hmc5883__driver.html#ga510174357ad0bd347beb541bebf7273b">More...</a><br /></td></tr>
+<tr class="memdesc:ga510174357ad0bd347beb541bebf7273b"><td class="mdescLeft">&#160;</td><td class="mdescRight">HMC5883_Update 读取最新的传感器数据  <a href="group__hmc5883__driver.html#ga510174357ad0bd347beb541bebf7273b">More...</a><br /></td></tr>
 <tr class="separator:ga510174357ad0bd347beb541bebf7273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

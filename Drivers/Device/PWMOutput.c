@@ -10,7 +10,7 @@
  *@ingroup pwm_output
  *@{
  */
-#define PWMOUTPUT_BASE  20999   ///< Base value of output
+#define PWMOUTPUT_BASE  20999   ///< 输出的基准值
 
 static TIM_HandleTypeDef * pwm_out_handle1 = NULL,* pwm_out_handle2 = NULL;
 
