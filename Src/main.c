@@ -43,16 +43,7 @@
 
 /* USER CODE BEGIN Includes */
 
-#include <stdio.h>
-#include "LED.h"
-#include "MS5611.h"
-#include "MPU6050.h"
-#include "HMC5883.h"
-#include "W25QXX.h"
-#include "TimeMeter.h"
-#include "mavlink.h"
-#include "PWMOutput.h"
-#include "PWMInput.h"
+#include "Utils.h"
 
 /* USER CODE END Includes */
 
@@ -87,7 +78,6 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-    volatile uint32_t tim = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -114,15 +104,11 @@ int main(void)
   MX_FATFS_Init();
 
   /* USER CODE BEGIN 2 */
+    
+    Utils_SystemInit();
+    //运行系统自测功能，请连接串口，按照串口输出的提示来进行操作
+    Utils_RunSelfTest();
 
-    LED_Show(LED_COLOR_OFF);
-    PWMOutput_Init(&htim1,&htim3);
-    PWMInput_Init(&htim2,&htim4);
-    TimeMeter_Init(&htim6);
-    MPU6050_Init(&hi2c1);
-    HMC5883_Init(&hi2c1);
-    MS5611_Init(&hspi2);
-    W25Q_Init(&hspi1);
 
   /* USER CODE END 2 */
 
