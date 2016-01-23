@@ -43,19 +43,18 @@ static void Utils_SystemInitCheck(uint16_t state_flag, const char * str_ok, cons
 void Utils_RunSelfTest(void)
 {
 
-    printf("Now testing LED display,LONG press KEY to continue...\r\n");
-
-    
     for(uint8_t i = 0; i <= LED_COLOR_CYAN; i++)
     {
         LED_Show(i);
         HAL_Delay(500);
-        
+
+
+        printf("Now testing LED display,LONG press KEY to continue...\r\n");
         if(i == LED_COLOR_CYAN)
         {
             i = 0;
         }
-        
+
         if(GPIO_PIN_RESET == HAL_GPIO_ReadPin(Key_GPIO_Port, Key_Pin))
         {
             break;
@@ -63,7 +62,7 @@ void Utils_RunSelfTest(void)
     }
 
     LED_Show(LED_COLOR_WHITE);
-    
+
     printf("\r\nNow sensor initialize state check...\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_ACCELEROMETER,
@@ -120,7 +119,7 @@ void Utils_RunSelfTest(void)
     }
 
     uint32_t tick = HAL_GetTick();
-    
+
     for(;;)
     {
         if(MS5611_Update(&tmp[0], &tmp[1]))
@@ -136,8 +135,8 @@ void Utils_RunSelfTest(void)
             break;
         }
     }
-    
-    printf("\r\nQBL-Pilot sel test completed !\r\n");
+
+    printf("\r\nQBL-Pilot self test completed !\r\n");
 }
 
 void Utils_SystemInit(void)
