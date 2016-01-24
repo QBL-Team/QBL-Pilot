@@ -42,7 +42,6 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
-
 #include "Utils.h"
 
 /* USER CODE END Includes */
