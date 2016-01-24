@@ -650,8 +650,6 @@ set(SOURCE_FILES
     Middlewares/Third_Party/FatFs/src/ff_gen_drv.h
     Middlewares/Third_Party/FatFs/src/ffconf_template.h
     Middlewares/Third_Party/FatFs/src/integer.h
-    Middlewares/QBLProtocol.c
-    Middlewares/QBLProtocol.h
     Middlewares/RingBuffer.c
     Middlewares/RingBuffer.h
     Middlewares/TimeMeter.c

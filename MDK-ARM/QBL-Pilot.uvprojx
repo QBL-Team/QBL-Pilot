@@ -687,11 +687,6 @@
               <FilePath>..\Middlewares\TimeMeter.c</FilePath>
             </File>
             <File>
-              <FileName>QBLProtocol.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares\QBLProtocol.c</FilePath>
-            </File>
-            <File>
               <FileName>Utils.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\Utils.c</FilePath>

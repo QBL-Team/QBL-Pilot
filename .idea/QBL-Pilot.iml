@@ -106,6 +106,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h" isTestSource="false" />
@@ -116,19 +117,19 @@
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h" isTestSource="false" />
@@ -140,14 +141,14 @@
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h" isTestSource="false" />
@@ -155,24 +156,23 @@
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_conf_template.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410cx.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410tx.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f469xx.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410rx.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410tx.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f479xx.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h" isTestSource="false" />
@@ -474,7 +474,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Include/core_cm0plus.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Include/arm_const_structs.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drivers/CMSIS/Include/core_cmSimd.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Utils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/RingBuffer.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/diskio.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c" isTestSource="false" />
@@ -489,9 +488,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/integer.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/usbh_diskio.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sram_diskio.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sram_diskio.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sdram_diskio.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sram_diskio.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sram_diskio.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sdram_diskio.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/usbh_diskio.h" isTestSource="false" />
@@ -556,6 +555,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_memory_vect.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_param_request_list.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_scaled_imu2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_control_system_state.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_data_transmission_handshake.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_scaled_pressure2.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_log_data.h" isTestSource="false" />
@@ -573,7 +573,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_command_int.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_autopilot_version.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_scaled_pressure3.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_hil_controls.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_log_request_list.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_extended_sys_state.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_debug_vect.h" isTestSource="false" />
@@ -584,7 +583,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_hil_gps.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_vision_position_estimate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_named_value_int.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_control_system_state.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_hil_controls.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_command_long.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_terrain_data.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_set_position_target_local_ned.h" isTestSource="false" />
@@ -639,8 +638,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/mavlink_helpers.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/mavlink/checksum.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Middlewares/TimeMeter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Middlewares/QBLProtocol.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Middlewares/QBLProtocol.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Middlewares/Utils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Inc/sdio.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Inc/gpio.h" isTestSource="false" />
@@ -706,6 +704,7 @@
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h" />
@@ -716,19 +715,19 @@
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h" />
@@ -740,14 +739,14 @@
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h" />
@@ -755,24 +754,23 @@
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_conf_template.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h" />
-          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h" />
+          <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h" />
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410cx.h" />
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h" />
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h" />
-          <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h" />
+          <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410tx.h" />
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f469xx.h" />
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410rx.h" />
-          <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410tx.h" />
+          <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h" />
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h" />
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f479xx.h" />
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h" />
@@ -801,7 +799,6 @@
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Include/core_cm0plus.h" />
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Include/arm_const_structs.h" />
           <root url="file://$MODULE_DIR$/Drivers/CMSIS/Include/core_cmSimd.h" />
-          <root url="file://$MODULE_DIR$/Middlewares/Utils.h" />
           <root url="file://$MODULE_DIR$/Middlewares/RingBuffer.h" />
           <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/diskio.h" />
           <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c" />
@@ -816,9 +813,9 @@
           <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/integer.h" />
           <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.c" />
           <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/usbh_diskio.c" />
-          <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sram_diskio.h" />
-          <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sram_diskio.c" />
           <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sdram_diskio.h" />
+          <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sram_diskio.c" />
+          <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sram_diskio.h" />
           <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sdram_diskio.c" />
           <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.h" />
           <root url="file://$MODULE_DIR$/Middlewares/Third_Party/FatFs/src/drivers/usbh_diskio.h" />
@@ -883,6 +880,7 @@
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_memory_vect.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_param_request_list.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_scaled_imu2.h" />
+          <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_control_system_state.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_data_transmission_handshake.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_scaled_pressure2.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_log_data.h" />
@@ -900,7 +898,6 @@
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_command_int.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_autopilot_version.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_scaled_pressure3.h" />
-          <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_hil_controls.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_log_request_list.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_extended_sys_state.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_debug_vect.h" />
@@ -911,7 +908,7 @@
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_hil_gps.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_vision_position_estimate.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_named_value_int.h" />
-          <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_control_system_state.h" />
+          <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_hil_controls.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_command_long.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_terrain_data.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/common/mavlink_msg_set_position_target_local_ned.h" />
@@ -966,8 +963,7 @@
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/mavlink_helpers.h" />
           <root url="file://$MODULE_DIR$/Middlewares/mavlink/checksum.h" />
           <root url="file://$MODULE_DIR$/Middlewares/TimeMeter.h" />
-          <root url="file://$MODULE_DIR$/Middlewares/QBLProtocol.h" />
-          <root url="file://$MODULE_DIR$/Middlewares/QBLProtocol.c" />
+          <root url="file://$MODULE_DIR$/Middlewares/Utils.h" />
           <root url="file://$MODULE_DIR$/Inc/sdio.h" />
           <root url="file://$MODULE_DIR$/Inc/gpio.h" />
           <root url="file://$MODULE_DIR$/Inc/fatfs.h" />
