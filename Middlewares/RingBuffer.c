@@ -11,14 +11,21 @@
  * \brief RING_BUFFER_ENTER_CRITICAL 进入临界模式
  */
 
+#ifdef __EDIT_WITH_CLION
+#define RING_BUFFER_ENTER_CRITICAL()
+#else
 #define RING_BUFFER_ENTER_CRITICAL()    __disable_irq()
-
+#endif
 /*!
  *@ingroup ring_buffer
  * \brief RING_BUFFER_EXIT_CRITICAL 退出临界模式
  */
 
+#ifdef __EDIT_WITH_CLION
+#define RING_BUFFER_EXIT_CRITICAL()
+#else
 #define RING_BUFFER_EXIT_CRITICAL()     __enable_irq()
+#endif
 
 /*!
  * @ingroup ring_buffer
@@ -27,23 +34,19 @@
  * \return  环形缓冲实例的指针
  */
 
-RingBuffer_TypeDef * RingBuffer_Init(uint16_t capacity)
-{
-    RingBuffer_TypeDef * temp = NULL;
-    
+RingBuffer_TypeDef *RingBuffer_Init(uint16_t capacity) {
+    RingBuffer_TypeDef *temp = NULL;
+
     temp = malloc(sizeof(RingBuffer_TypeDef));
 
-    if(NULL != temp)
-    {
+    if (NULL != temp) {
         temp->buffer = malloc(capacity);
 
-        if(NULL == temp->buffer)
-        {
+        if (NULL == temp->buffer) {
             free(temp);
             temp = NULL;
         }
-        else
-        {
+        else {
             temp->write_index = 0;
             temp->read_index = 0;
             temp->used_size = 0;
@@ -61,14 +64,14 @@ RingBuffer_TypeDef * RingBuffer_Init(uint16_t capacity)
  * \param data  将要写入的数据
  */
 
-void RingBuffer_Write(RingBuffer_TypeDef * ring_buffer,uint8_t data){
+void RingBuffer_Write(RingBuffer_TypeDef *ring_buffer, uint8_t data) {
     RING_BUFFER_ENTER_CRITICAL();
-    if(ring_buffer->used_size == ring_buffer->buffer_capacity){
+    if (ring_buffer->used_size == ring_buffer->buffer_capacity) {
         RING_BUFFER_EXIT_CRITICAL();
         return;
     }
     ring_buffer->used_size++;
-    if(ring_buffer->write_index == ring_buffer->buffer_capacity - 1){
+    if (ring_buffer->write_index == ring_buffer->buffer_capacity - 1) {
         ring_buffer->write_index = 0;
     }
     ring_buffer->buffer[ring_buffer->write_index++] = data;
@@ -82,14 +85,14 @@ void RingBuffer_Write(RingBuffer_TypeDef * ring_buffer,uint8_t data){
  * \return
  */
 
-uint8_t RingBuffer_Read(RingBuffer_TypeDef * ring_buffer){
+uint8_t RingBuffer_Read(RingBuffer_TypeDef *ring_buffer) {
     uint8_t tmp;
     RING_BUFFER_ENTER_CRITICAL();
-    if(ring_buffer->used_size == 0){
+    if (ring_buffer->used_size == 0) {
         RING_BUFFER_EXIT_CRITICAL();
         return 0;
     }
-    if(ring_buffer->read_index == ring_buffer->buffer_capacity - 1) {
+    if (ring_buffer->read_index == ring_buffer->buffer_capacity - 1) {
         ring_buffer->read_index = 0;
     }
     ring_buffer->used_size--;
@@ -105,7 +108,7 @@ uint8_t RingBuffer_Read(RingBuffer_TypeDef * ring_buffer){
  * \return
  */
 
-uint16_t RingBuffer_Used(RingBuffer_TypeDef * ring_buffer){
+uint16_t RingBuffer_Used(RingBuffer_TypeDef *ring_buffer) {
     return ring_buffer->used_size;
 }
 
@@ -115,7 +118,7 @@ uint16_t RingBuffer_Used(RingBuffer_TypeDef * ring_buffer){
  * \param ring_buffer   要清除的缓冲的实例
  */
 
-void RingBuffer_Clear(RingBuffer_TypeDef * ring_buffer) {
+void RingBuffer_Clear(RingBuffer_TypeDef *ring_buffer) {
     RING_BUFFER_ENTER_CRITICAL();
 
     ring_buffer->read_index = 0;

@@ -1,21 +1,23 @@
 cmake_minimum_required(VERSION 3.3)
-project(QBL_Pilot C)
+project(QBL_Pilot)
 
+set(CMAKE_C_COMPILER "D:\\Develop\\GCC_ARM\\bin\\arm-none-eabi-gcc")
 
-include_directories(
-        AFTER
-        "Inc"
-        "Drivers/STM32F4xx_HAL_Driver/Inc"
-        "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
-        "Drivers/CMSIS/Include"
-        "Drivers/CMSIS/Device/ST/STM32F4xx/Include"
-        "Middlewares/Third_Party/FatFs/src/drivers"
-        "Middlewares/Third_Party/FatFs/src"
-        "Drivers/Device"
-        "Middlewares"
-)
+set(CMAKE_C_FLAGS "-mthumb -mcpu=cortex-m3")
 
-add_definitions(-DUSE_HAL_DRIVER -DSTM32F407xx)
+include_directories(Inc)
+include_directories(Drivers/CMSIS/Include)
+include_directories(Drivers/CMSIS/Device/ST/STM32F4xx/Include)
+include_directories(Drivers/STM32F4xx_HAL_Driver/Inc)
+include_directories(Drivers/STM32F4xx_HAL_Driver/Inc/Legacy)
+include_directories(Middlewares/mavlink)
+include_directories(Middlewares/mavlink/common)
+include_directories(Middlewares/Third_Party/FatFs/src)
+include_directories(Middlewares/Third_Party/FatFs/src/drivers)
+include_directories(Drivers/Device)
+include_directories(Middlewares)
+
+add_definitions("-DUSE_HAL_DRIVER" "-DSTM32F407xx" "-D__EDIT_WITH_CLION")
 
 set(SOURCE_FILES
     Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h
@@ -38,277 +40,6 @@ set(SOURCE_FILES
     Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
     Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
     Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_abs_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_abs_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_abs_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_abs_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_add_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_add_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_add_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_add_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_dot_prod_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_dot_prod_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_dot_prod_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_dot_prod_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_mult_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_mult_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_mult_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_mult_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_negate_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_negate_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_negate_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_negate_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_offset_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_offset_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_offset_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_offset_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_scale_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_scale_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_scale_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_scale_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_shift_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_shift_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_shift_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_sub_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_sub_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_sub_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/BasicMathFunctions/arm_sub_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/CommonTables/arm_common_tables.c
-    Drivers/CMSIS/DSP_Lib/Source/CommonTables/arm_const_structs.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_conj_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_conj_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_conj_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_dot_prod_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_dot_prod_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_dot_prod_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mag_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mag_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mag_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mag_squared_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mag_squared_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mag_squared_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mult_cmplx_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mult_cmplx_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mult_cmplx_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mult_real_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mult_real_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/ComplexMathFunctions/arm_cmplx_mult_real_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/ControllerFunctions/arm_pid_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/ControllerFunctions/arm_pid_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/ControllerFunctions/arm_pid_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/ControllerFunctions/arm_pid_reset_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/ControllerFunctions/arm_pid_reset_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/ControllerFunctions/arm_pid_reset_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/ControllerFunctions/arm_sin_cos_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/ControllerFunctions/arm_sin_cos_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FastMathFunctions/arm_cos_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FastMathFunctions/arm_cos_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FastMathFunctions/arm_cos_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FastMathFunctions/arm_sin_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FastMathFunctions/arm_sin_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FastMathFunctions/arm_sin_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FastMathFunctions/arm_sqrt_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FastMathFunctions/arm_sqrt_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df1_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_f64.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_df2T_init_f64.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_stereo_df2T_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_biquad_cascade_stereo_df2T_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_opt_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_fast_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_opt_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_opt_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_fast_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_opt_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_partial_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_conv_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_opt_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_fast_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_opt_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_correlate_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_fast_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_decimate_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_fast_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_init_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_interpolate_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_lattice_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_init_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_fir_sparse_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_iir_lattice_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_norm_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/FilteringFunctions/arm_lms_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_add_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_add_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_add_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_cmplx_mult_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_cmplx_mult_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_cmplx_mult_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_inverse_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_inverse_f64.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_mult_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_mult_fast_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_mult_fast_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_mult_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_mult_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_scale_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_scale_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_scale_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_sub_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_sub_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_sub_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_trans_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_trans_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/MatrixFunctions/arm_mat_trans_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_max_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_max_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_max_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_max_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_mean_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_mean_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_mean_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_mean_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_min_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_min_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_min_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_min_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_power_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_power_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_power_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_power_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_rms_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_rms_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_rms_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_std_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_std_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_std_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_var_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_var_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/StatisticsFunctions/arm_var_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_copy_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_copy_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_copy_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_copy_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_fill_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_fill_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_fill_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_fill_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_float_to_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_float_to_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_float_to_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_q15_to_float.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_q15_to_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_q15_to_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_q31_to_float.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_q31_to_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_q31_to_q7.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_q7_to_float.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_q7_to_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/SupportFunctions/arm_q7_to_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_bitreversal.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix2_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix2_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix2_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix2_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix2_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix2_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix4_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix4_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix4_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix4_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix4_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix4_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_cfft_radix8_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_dct4_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_dct4_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_dct4_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_dct4_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_dct4_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_dct4_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_rfft_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_rfft_fast_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_rfft_fast_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_rfft_init_f32.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_rfft_init_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_rfft_init_q31.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_rfft_q15.c
-    Drivers/CMSIS/DSP_Lib/Source/TransformFunctions/arm_rfft_q31.c
     Drivers/CMSIS/Include/arm_common_tables.h
     Drivers/CMSIS/Include/arm_const_structs.h
     Drivers/CMSIS/Include/arm_math.h
@@ -490,7 +221,6 @@ set(SOURCE_FILES
     Inc/stm32f4xx_it.h
     Inc/tim.h
     Inc/usart.h
-    MDK-ARM/RTE/RTE_Components.h
     Middlewares/mavlink/common/common.h
     Middlewares/mavlink/common/mavlink.h
     Middlewares/mavlink/common/mavlink_msg_actuator_control_target.h
@@ -629,19 +359,13 @@ set(SOURCE_FILES
     Middlewares/mavlink/protocol.h
     Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.c
     Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.h
-    Middlewares/Third_Party/FatFs/src/drivers/sdram_diskio.c
-    Middlewares/Third_Party/FatFs/src/drivers/sdram_diskio.h
-    Middlewares/Third_Party/FatFs/src/drivers/sram_diskio.c
-    Middlewares/Third_Party/FatFs/src/drivers/sram_diskio.h
-    Middlewares/Third_Party/FatFs/src/drivers/usbh_diskio.c
-    Middlewares/Third_Party/FatFs/src/drivers/usbh_diskio.h
-    Middlewares/Third_Party/FatFs/src/option/cc932.c
-    Middlewares/Third_Party/FatFs/src/option/cc936.c
-    Middlewares/Third_Party/FatFs/src/option/cc949.c
-    Middlewares/Third_Party/FatFs/src/option/cc950.c
-    Middlewares/Third_Party/FatFs/src/option/ccsbcs.c
-    Middlewares/Third_Party/FatFs/src/option/syscall.c
-    Middlewares/Third_Party/FatFs/src/option/unicode.c
+#    Middlewares/Third_Party/FatFs/src/option/cc932.c
+#    Middlewares/Third_Party/FatFs/src/option/cc936.c
+#    Middlewares/Third_Party/FatFs/src/option/cc949.c
+#    Middlewares/Third_Party/FatFs/src/option/cc950.c
+#    Middlewares/Third_Party/FatFs/src/option/ccsbcs.c
+#    Middlewares/Third_Party/FatFs/src/option/syscall.c
+#    Middlewares/Third_Party/FatFs/src/option/unicode.c
     Middlewares/Third_Party/FatFs/src/diskio.c
     Middlewares/Third_Party/FatFs/src/diskio.h
     Middlewares/Third_Party/FatFs/src/ff.c
@@ -669,4 +393,4 @@ set(SOURCE_FILES
     Src/tim.c
     Src/usart.c)
 
-add_executable(QBL_Pilot ${SOURCE_FILES})
+add_library(QBL_Pilot ${SOURCE_FILES})
