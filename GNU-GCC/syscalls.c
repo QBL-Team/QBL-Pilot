@@ -28,7 +28,8 @@ extern int __io_getchar(void) __attribute__((weak));
   register char * stack_ptr asm("sp");
 #endif
 
-
+#include "stm32f4xx_hal.h"
+#include "usart.h"
 
 
 caddr_t _sbrk(int incr)
@@ -101,12 +102,8 @@ void _exit (int status)
 
 int _write(int file, char *ptr, int len)
 {
-	int DataIdx;
 
-		for (DataIdx = 0; DataIdx < len; DataIdx++)
-		{
-		   __io_putchar( *ptr++ );
-		}
+    HAL_UART_Transmit(&huart1,ptr,len,10);
 	return len;
 }
 

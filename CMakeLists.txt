@@ -11,7 +11,6 @@ set(CMAKE_SYSTEM_PROCESSOR cortex-m3)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/Build)
 
 set(CMAKE_C_COMPILER "D:\\Develop\\GCC_ARM\\bin\\arm-none-eabi-gcc")
-set(CMAKE_C_FLAGS "-mthumb -mcpu=cortex-m3")
 
 #设置工具链
 set(CMAKE_C_COMPILER "D:\\Develop\\GCC_ARM\\bin\\arm-none-eabi-gcc")
@@ -30,13 +29,14 @@ set(CMAKE_C_LINK_EXECUTABLE "<CMAKE_C_COMPILER> <LINK_FLAGS> -o <TARGET> <OBJECT
 set(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_CXX_COMPILER> <LINK_FLAGS> -o <TARGET> <OBJECTS>")
 
 #设置编译选项
-set(CMAKE_C_FLAGS "-mcpu=cortex-m3 -mthumb")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mthumb -fno-builtin -mcpu=cortex-m3 -Wall -std=gnu99 -ffunction-sections -fdata-sections -fomit-frame-pointer -mabi=aapcs -fno-unroll-loops -ffast-math -ftree-vectorize")
 set(CMAKE_EXE_LINKER_FLAGS "-Wl,--gc-sections -mthumb -mcpu=cortex-m3 -mabi=aapcs")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T${CMAKE_SOURCE_DIR}/GNU-GCC/STM32F407VG_FLASH.ld")
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Build")
 
 
 include_directories(Inc)
+include_directories(Src)
 include_directories(Drivers/CMSIS/Include)
 include_directories(Drivers/CMSIS/Device/ST/STM32F4xx/Include)
 include_directories(Drivers/STM32F4xx_HAL_Driver/Inc)
@@ -48,7 +48,7 @@ include_directories(Middlewares/Third_Party/FatFs/src/drivers)
 include_directories(Drivers/Device)
 include_directories(Middlewares)
 
-add_definitions("-DUSE_HAL_DRIVER" "-DSTM32F407xx" "-D__EDIT_WITH_CLION")
+add_definitions("-DUSE_HAL_DRIVER" "-DSTM32F407xx")
 
 set(SOURCE_FILES
     GNU-GCC/startup_stm32f407xx.s
@@ -421,3 +421,4 @@ set(SOURCE_FILES
 
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCE_FILES})
 ADD_CUSTOM_COMMAND(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_SIZE} ${PROJECT_NAME}.elf)
+ADD_CUSTOM_TARGET(${CMAKE_PROJECT_NAME}.bin ALL DEPENDS ${CMAKE_PROJECT_NAME} COMMAND ${CMAKE_OBJCOPY} -Obinary ${CMAKE_PROJECT_NAME}.elf ${CMAKE_PROJECT_NAME}.bin)
