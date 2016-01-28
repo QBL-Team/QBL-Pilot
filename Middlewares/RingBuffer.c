@@ -11,21 +11,15 @@
  * \brief RING_BUFFER_ENTER_CRITICAL 进入临界模式
  */
 
-#ifdef __EDIT_WITH_CLION
-#define RING_BUFFER_ENTER_CRITICAL()
-#else
-#define RING_BUFFER_ENTER_CRITICAL()    __disable_irq()
-#endif
+#define RING_BUFFER_ENTER_CRITICAL()    __asm("CPSID i")
+
 /*!
  *@ingroup ring_buffer
  * \brief RING_BUFFER_EXIT_CRITICAL 退出临界模式
  */
 
-#ifdef __EDIT_WITH_CLION
-#define RING_BUFFER_EXIT_CRITICAL()
-#else
-#define RING_BUFFER_EXIT_CRITICAL()     __enable_irq()
-#endif
+
+#define RING_BUFFER_EXIT_CRITICAL()      __asm("CPSIE i")
 
 /*!
  * @ingroup ring_buffer
@@ -36,6 +30,8 @@
 
 RingBuffer_TypeDef *RingBuffer_Init(uint16_t capacity) {
     RingBuffer_TypeDef *temp = NULL;
+    
+    
 
     temp = malloc(sizeof(RingBuffer_TypeDef));
 

@@ -1,9 +1,40 @@
 cmake_minimum_required(VERSION 3.3)
-project(QBL_Pilot)
+project(QBL-Pilot)
+
+enable_language(C)
+enable_language(ASM)
+
+#设置目标体系
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR cortex-m3)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/Build)
 
 set(CMAKE_C_COMPILER "D:\\Develop\\GCC_ARM\\bin\\arm-none-eabi-gcc")
-
 set(CMAKE_C_FLAGS "-mthumb -mcpu=cortex-m3")
+
+#设置工具链
+set(CMAKE_C_COMPILER "D:\\Develop\\GCC_ARM\\bin\\arm-none-eabi-gcc")
+set(CMAKE_ASM_COMPILER "D:\\Develop\\GCC_ARM\\bin\\arm-none-eabi-gcc")
+set(CMAKE_C_LINK_EXECUTABLE "D:\\Develop\\GCC_ARM\\bin\\arm-none-eabi-ld")
+set(CMAKE_OBJCOPY "D:\\Develop\\GCC_ARM\\bin\\arm-none-eabi-objcopy")
+set(CMAKE_OBJDUMP "D:\\Develop\\GCC_ARM\\bin\\arm-none-eabi-objdump")
+set(CMAKE_SIZE "D:\\Develop\\GCC_ARM\\bin\\arm-none-eabi-size")
+set(CMAKE_EXECUTABLE_SUFFIX ".elf")
+
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+
+set(CMAKE_C_LINK_EXECUTABLE "<CMAKE_C_COMPILER> <LINK_FLAGS> -o <TARGET> <OBJECTS>")
+set(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_CXX_COMPILER> <LINK_FLAGS> -o <TARGET> <OBJECTS>")
+
+#设置编译选项
+set(CMAKE_C_FLAGS "-mcpu=cortex-m3 -mthumb")
+set(CMAKE_EXE_LINKER_FLAGS "-Wl,--gc-sections -mthumb -mcpu=cortex-m3 -mabi=aapcs")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T${CMAKE_SOURCE_DIR}/GNU-GCC/STM32F407VG_FLASH.ld")
+set(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Build")
+
 
 include_directories(Inc)
 include_directories(Drivers/CMSIS/Include)
@@ -20,6 +51,8 @@ include_directories(Middlewares)
 add_definitions("-DUSE_HAL_DRIVER" "-DSTM32F407xx" "-D__EDIT_WITH_CLION")
 
 set(SOURCE_FILES
+    GNU-GCC/startup_stm32f407xx.s
+    GNU-GCC/syscalls.c
     Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h
     Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h
     Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h
@@ -359,13 +392,6 @@ set(SOURCE_FILES
     Middlewares/mavlink/protocol.h
     Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.c
     Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.h
-#    Middlewares/Third_Party/FatFs/src/option/cc932.c
-#    Middlewares/Third_Party/FatFs/src/option/cc936.c
-#    Middlewares/Third_Party/FatFs/src/option/cc949.c
-#    Middlewares/Third_Party/FatFs/src/option/cc950.c
-#    Middlewares/Third_Party/FatFs/src/option/ccsbcs.c
-#    Middlewares/Third_Party/FatFs/src/option/syscall.c
-#    Middlewares/Third_Party/FatFs/src/option/unicode.c
     Middlewares/Third_Party/FatFs/src/diskio.c
     Middlewares/Third_Party/FatFs/src/diskio.h
     Middlewares/Third_Party/FatFs/src/ff.c
@@ -393,4 +419,5 @@ set(SOURCE_FILES
     Src/tim.c
     Src/usart.c)
 
-add_library(QBL_Pilot ${SOURCE_FILES})
+add_executable(${CMAKE_PROJECT_NAME} ${SOURCE_FILES})
+ADD_CUSTOM_COMMAND(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_SIZE} ${PROJECT_NAME}.elf)
