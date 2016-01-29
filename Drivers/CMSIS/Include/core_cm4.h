@@ -154,6 +154,7 @@
       #define __FPU_USED       0U
     #endif
   #else
+
     #define __FPU_USED         0U
   #endif
 

@@ -65,7 +65,7 @@ void SystemClock_Config(void);
 
 #if __GNUC__
 
-#elif
+#else
 
 int fputc(int ch, FILE* f)
 {
