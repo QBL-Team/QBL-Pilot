@@ -40,18 +40,15 @@ static void Utils_SystemInitCheck(uint16_t state_flag, const char * str_ok, cons
     }
 }
 
-#include <math.h>
-
 void Utils_RunSelfTest(void)
 {
-    float a = 5;
+
     for(uint8_t i = 0; i <= LED_COLOR_CYAN; i++)
     {
         LED_Show(i);
         HAL_Delay(500);
 
-//        a = sinf(a);
-        a+=10.0f;
+
         printf("Now testing LED display,LONG press KEY to continue...\r\n");
         if(i == LED_COLOR_CYAN)
         {

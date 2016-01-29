@@ -23,6 +23,7 @@ function(cortex_set_tool_chain path prefix linkscript)
     message("Compiler's path    :${path} ")
     message("Compiler's prefix  :${prefix}")
 
+
     #通用的编译参数
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -mabi=aapcs -O3 -flto -mthumb -mcpu=${CMAKE_SYSTEM_PROCESSOR} -fno-common -ffreestanding -fno-builtin -lc -lrdimon" PARENT_SCOPE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -mabi=aapcs -O3 -flto -mthumb -mcpu=${CMAKE_SYSTEM_PROCESSOR} -fno-common -ffreestanding -fno-builtin -lc -lrdimon" PARENT_SCOPE)
@@ -33,9 +34,9 @@ endfunction()
 function(cortex_enable_fpu)
     if(CMAKE_SYSTEM_PROCESSOR MATCHES cortex-m4)
         message("Target's FPU enabled !")
+        add_definitions("-D__FPU_PRESENT=1")
         set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfpu=fpv4-sp-d16 -mfloat-abi=softfp" PARENT_SCOPE)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mfpu=fpv4-sp-d16 -mfloat-abi=softfp" PARENT_SCOPE)
-        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -mfpu=fpv4-sp-d16 -mfloat-abi=softfp" PARENT_SCOPE)
     endif()
 endfunction()
 
