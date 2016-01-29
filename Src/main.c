@@ -63,6 +63,10 @@ void SystemClock_Config(void);
 
 /* USER CODE BEGIN 0 */
 
+#if __GNUC__
+
+#elif
+
 int fputc(int ch, FILE* f)
 {
     uint8_t tmp[1];
@@ -70,6 +74,8 @@ int fputc(int ch, FILE* f)
     HAL_UART_Transmit(&huart1, tmp, 1, 1);
     return ch;
 }
+
+#endif
 
 /* USER CODE END 0 */
 

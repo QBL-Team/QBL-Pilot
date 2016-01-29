@@ -1,0 +1,50 @@
+function(cortex_set_tool_chain path prefix linkscript)
+
+    #设置编译器路径
+    set(CMAKE_C_COMPILER "${path}/${prefix}-gcc" PARENT_SCOPE)
+    set(CMAKE_CXX_COMPILER "${path}/${prefix}-g++" PARENT_SCOPE)
+    set(CMAKE_ASM_COMPILER "${path}/${prefix}-gcc" PARENT_SCOPE)
+    set(CMAKE_C_LINK_EXECUTABLE "${path}/${prefix}-ld" PARENT_SCOPE)
+    set(CMAKE_OBJCOPY "${path}/${prefix}-objcopy" PARENT_SCOPE)
+    set(CMAKE_OBJDUMP "${path}/${prefix}-objdump" PARENT_SCOPE)
+    set(CMAKE_SIZE "${path}/${prefix}-size" PARENT_SCOPE)
+    #设置生成文件的后缀
+    set(CMAKE_EXECUTABLE_SUFFIX ".elf" PARENT_SCOPE)
+
+    set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER PARENT_SCOPE)
+    set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY PARENT_SCOPE)
+    set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY PARENT_SCOPE)
+
+
+    set(CMAKE_C_LINK_EXECUTABLE "<CMAKE_C_COMPILER> <LINK_FLAGS> -o <TARGET> <OBJECTS>" PARENT_SCOPE)
+    set(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_CXX_COMPILER> <LINK_FLAGS> -o <TARGET> <OBJECTS>" PARENT_SCOPE)
+
+    message("Target cpu arch    :${CMAKE_SYSTEM_PROCESSOR} ")
+    message("Compiler's path    :${path} ")
+    message("Compiler's prefix  :${prefix}")
+
+
+    #通用的编译参数
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -mabi=aapcs -O3 -flto -mthumb -mcpu=${CMAKE_SYSTEM_PROCESSOR} -fno-common -ffreestanding -fno-builtin -lc -lrdimon" PARENT_SCOPE)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -mabi=aapcs -O3 -flto -mthumb -mcpu=${CMAKE_SYSTEM_PROCESSOR} -fno-common -ffreestanding -fno-builtin -lc -lrdimon" PARENT_SCOPE)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--gc-sections -flto -mthumb -mthumb -mabi=aapcs -T${linkscript}" PARENT_SCOPE)
+
+endfunction()
+
+function(cortex_enable_fpu)
+    if(CMAKE_SYSTEM_PROCESSOR MATCHES cortex-m4)
+        message("Target's FPU enabled !")
+        add_definitions("-D__FPU_PRESENT=1")
+        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfpu=fpv4-sp-d16 -mfloat-abi=softfp" PARENT_SCOPE)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mfpu=fpv4-sp-d16 -mfloat-abi=softfp" PARENT_SCOPE)
+    endif()
+endfunction()
+
+function(cortex_build_info)
+    ADD_CUSTOM_COMMAND(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_SIZE} ${PROJECT_NAME}.elf)
+endfunction()
+
+function(cortex_build_bin)
+    ADD_CUSTOM_TARGET(${CMAKE_PROJECT_NAME}.bin ALL DEPENDS ${CMAKE_PROJECT_NAME} COMMAND ${CMAKE_OBJCOPY} -Obinary ${CMAKE_PROJECT_NAME}.elf ${CMAKE_PROJECT_NAME}.bin)
+endfunction()
+
