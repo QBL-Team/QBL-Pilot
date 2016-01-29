@@ -43,7 +43,6 @@
 
 /* USER CODE BEGIN Includes */
 #include "Utils.h"
-#include "mavlink.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -65,7 +64,7 @@ void SystemClock_Config(void);
 
 #if __GNUC__
 
-#elif
+#else
 
 int fputc(int ch, FILE* f)
 {
@@ -119,6 +118,7 @@ int main(void)
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
     while (1) {
+
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */

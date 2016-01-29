@@ -20,22 +20,20 @@
 
 static uint16_t utils_system_init_state_flag = 0;
 
-#define UTILS_SYSTEM_DEVICE_ALL_FAIL        (0 << 0)
-#define UTILS_SYSTEM_DEVICE_ACCELEROMETER   (1 << 0)
-#define UTILS_SYSTEM_DEVICE_GYROSCOPE       (1 << 1)
-#define UTILS_SYSTEM_DEVICE_BAROMETER       (1 << 2)
-#define UTILS_SYSTEM_DEVICE_MAGNETICMETER   (1 << 3)
-#define UTILS_SYSTEM_DEVICE_FLASH           (1 << 4)
-#define UTILS_SYSTEM_DEVICE_SDCARD          (1 << 5)
+#define UTILS_SYSTEM_DEVICE_ALL_FAIL (0 << 0)
+#define UTILS_SYSTEM_DEVICE_ACCELEROMETER (1 << 0)
+#define UTILS_SYSTEM_DEVICE_GYROSCOPE (1 << 1)
+#define UTILS_SYSTEM_DEVICE_BAROMETER (1 << 2)
+#define UTILS_SYSTEM_DEVICE_MAGNETICMETER (1 << 3)
+#define UTILS_SYSTEM_DEVICE_FLASH (1 << 4)
+#define UTILS_SYSTEM_DEVICE_SDCARD (1 << 5)
 
-static void Utils_SystemInitCheck(uint16_t state_flag, const char * str_ok, const char * str_fail)
+static void Utils_SystemInitCheck(uint16_t state_flag, const char* str_ok, const char* str_fail)
 {
-    if(utils_system_init_state_flag & state_flag)
-    {
+    if (utils_system_init_state_flag & state_flag) {
         printf(str_ok);
     }
-    else
-    {
+    else {
         printf(str_fail);
     }
 }
@@ -43,20 +41,16 @@ static void Utils_SystemInitCheck(uint16_t state_flag, const char * str_ok, cons
 void Utils_RunSelfTest(void)
 {
 
-    for(uint8_t i = 0; i <= LED_COLOR_CYAN; i++)
-    {
+    for (uint8_t i = 0; i <= LED_COLOR_CYAN; i++) {
         LED_Show(i);
         HAL_Delay(500);
 
-
         printf("Now testing LED display,LONG press KEY to continue...\r\n");
-        if(i == LED_COLOR_CYAN)
-        {
+        if (i == LED_COLOR_CYAN) {
             i = 0;
         }
 
-        if(GPIO_PIN_RESET == HAL_GPIO_ReadPin(Key_GPIO_Port, Key_Pin))
-        {
+        if (GPIO_PIN_RESET == HAL_GPIO_ReadPin(Key_GPIO_Port, Key_Pin)) {
             break;
         }
     }
@@ -66,71 +60,62 @@ void Utils_RunSelfTest(void)
     printf("\r\nNow sensor initialize state check...\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_ACCELEROMETER,
-                          "Accelerometer initialize succeed !\r\n",
-                          "Accelerometer initialize failed !\r\n");
-
+        "Accelerometer initialize succeed !\r\n",
+        "Accelerometer initialize failed !\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_GYROSCOPE,
-                          "Gyroscope initialize succeed !\r\n",
-                          "Gyroscope initialize failed !\r\n");
-
+        "Gyroscope initialize succeed !\r\n",
+        "Gyroscope initialize failed !\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_BAROMETER,
-                          "Barometer initialize succeed !\r\n",
-                          "Barometer initialize failed !\r\n");
-
+        "Barometer initialize succeed !\r\n",
+        "Barometer initialize failed !\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_MAGNETICMETER,
-                          "Magneticmeter initialize succeed !\r\n",
-                          "Magneticmeter initialize failed !\r\n");
-
+        "Magneticmeter initialize succeed !\r\n",
+        "Magneticmeter initialize failed !\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_FLASH,
-                          "Flash initialize succeed !\r\n",
-                          "Flash initialize failed !\r\n");
-
+        "Flash initialize succeed !\r\n",
+        "Flash initialize failed !\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_SDCARD,
-                          "SDCard initialize succeed !\r\n",
-                          "SDCard initialize failed !\r\n");
+        "SDCard initialize succeed !\r\n",
+        "SDCard initialize failed !\r\n");
 
     printf("\r\nNow sensor reading check...\r\n");
 
-
     float tmp[7];
 
-    if(MPU6050_Update(tmp, &tmp[6]))
-    {
+    if (MPU6050_Update(tmp, &tmp[6])) {
         printf("Accelerometer reading ok...\r\n");
         printf("ax = %f,ay = %f,az = %f\r\n", tmp[0], tmp[1], tmp[2]);
         printf("Gyroscope reading ok...\r\n");
         printf("gx = %f,gy = %f,gz = %f\r\n", tmp[3], tmp[4], tmp[5]);
-    } else {
+    }
+    else {
         printf("Accelerometer reading failed...\r\n");
         printf("Gyroscope reading failed...\r\n");
     }
 
-    if(HMC5883_Update(tmp))
-    {
+    if (HMC5883_Update(tmp)) {
         printf("Magneticmeter reading ok...\r\n");
         printf("mx = %f,my = %f,mz = %f\r\n", tmp[0], tmp[1], tmp[2]);
-    } else {
+    }
+    else {
         printf("Magneticmeter reading failed...\r\n");
     }
 
     uint32_t tick = HAL_GetTick();
 
-    for(;;)
-    {
-        if(MS5611_Update(&tmp[0], &tmp[1]))
-        {
+    for (;;) {
+        if (MS5611_Update(&tmp[0], &tmp[1])) {
             printf("Barometer reading ok...\r\n");
             printf("Pressure = %f,Temperature = %f\r\n", tmp[0], tmp[1]);
             break;
         }
 
-        if(HAL_GetTick() - tick > 1000)
-        {
+        if (HAL_GetTick() - tick > 1000) {
             printf("Barometer reading failed...\r\n");
             break;
         }
@@ -147,28 +132,23 @@ void Utils_SystemInit(void)
     PWMInput_Init(&htim2, &htim4);
     TimeMeter_Init(&htim6);
 
-    if(MPU6050_Init(&hi2c1))
-    {
+    if (MPU6050_Init(&hi2c1)) {
         utils_system_init_state_flag |= UTILS_SYSTEM_DEVICE_ACCELEROMETER;
         utils_system_init_state_flag |= UTILS_SYSTEM_DEVICE_GYROSCOPE;
     }
 
-    if(HMC5883_Init(&hi2c1))
-    {
+    if (HMC5883_Init(&hi2c1)) {
         utils_system_init_state_flag |= UTILS_SYSTEM_DEVICE_MAGNETICMETER;
     }
 
-    if(MS5611_Init(&hspi2))
-    {
+    if (MS5611_Init(&hspi2)) {
         utils_system_init_state_flag |= UTILS_SYSTEM_DEVICE_BAROMETER;
     }
-    if(W25Q_Init(&hspi1))
-    {
+    if (W25Q_Init(&hspi1)) {
         utils_system_init_state_flag |= UTILS_SYSTEM_DEVICE_FLASH;
     }
 
-    if(HAL_OK == HAL_SD_Init(&hsd, &SDCardInfo))
-    {
+    if (HAL_OK == (HAL_StatusTypeDef)HAL_SD_Init(&hsd, &SDCardInfo)) {
         utils_system_init_state_flag |= UTILS_SYSTEM_DEVICE_SDCARD;
     }
 }

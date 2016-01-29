@@ -10,13 +10,16 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/Build)
 
 include(CortexM.CMake)
 
+set(cortex_tool_root "D:\\Develop\\GCC4_ARM\\")
+
 cortex_set_tool_chain(
-    "D:\\Develop\\GCC_ARM\\bin\\"
+    ${cortex_tool_root}
     "arm-none-eabi"
     "${CMAKE_SOURCE_DIR}/GNU-GCC/STM32F407VG_FLASH.ld"
     )
 
 cortex_enable_fpu()
+
 
 include_directories(Inc)
 include_directories(Src)
@@ -44,9 +47,9 @@ aux_source_directory(Middlewares/Third_Party/FatFs/Src/drivers SOURCE_FILES)
 
 
 set(SOURCE_FILES
-    ${SOURCE_FILES}
     GNU-GCC/startup_stm32f407xx.s
     GNU-GCC/syscalls.c
+    ${SOURCE_FILES}
     )
 
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCE_FILES})

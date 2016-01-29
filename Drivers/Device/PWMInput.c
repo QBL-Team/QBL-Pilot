@@ -130,6 +130,9 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
             PWMInput_EdgeSwitch(&input_array[7], htim, TIM_CHANNEL_4);
         }
         break;
+
+    default:
+        break;
     }
 
 }
