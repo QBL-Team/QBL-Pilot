@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>QBL-Pilot: E:/Works/QBL-Pilot/Middlewares/QBLProtocol.c File Reference</title>
+<title>QBL-Pilot: E:/Works/QBL-Pilot/Middlewares/TimeMeter.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,18 +86,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">QBLProtocol.c File Reference</div>  </div>
+<div class="title">TimeMeter.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_q_b_l_protocol_8h_source.html">QBLProtocol.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_time_meter_8h_source.html">TimeMeter.h</a>&quot;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga9afcac76732944be4506349f955f8471"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__qbl__protocol.html#ga9afcac76732944be4506349f955f8471">QBLPROTOCOL</a> []</td></tr>
-<tr class="memdesc:ga9afcac76732944be4506349f955f8471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message type defination of pilot,using printf(QBLPROTOCOL[QBLPROTOCOL_SYSTEM_HEART_BEAT],system_time,system_mode) for example.  <a href="group__qbl__protocol.html#ga9afcac76732944be4506349f955f8471">More...</a><br /></td></tr>
-<tr class="separator:ga9afcac76732944be4506349f955f8471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a8a3b0ad512a6e6c6157440b68d395eac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a3b0ad512a6e6c6157440b68d395eac"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_TIM_PeriodElapsedCallback</b> (TIM_HandleTypeDef *htim)</td></tr>
+<tr class="separator:a8a3b0ad512a6e6c6157440b68d395eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcb0112a4c44df46d08462cafedd5548"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__meter.html#gabcb0112a4c44df46d08462cafedd5548">TimeMeter_Init</a> (TIM_HandleTypeDef *handle)</td></tr>
+<tr class="memdesc:gabcb0112a4c44df46d08462cafedd5548"><td class="mdescLeft">&#160;</td><td class="mdescRight">TimeMeter_Init 初始化定时器模块  <a href="group__time__meter.html#gabcb0112a4c44df46d08462cafedd5548">More...</a><br /></td></tr>
+<tr class="separator:gabcb0112a4c44df46d08462cafedd5548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9d13da5605d54c975070a7d0526ae0e"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__meter.html#gaf9d13da5605d54c975070a7d0526ae0e">TimeMeter_StartMeasure</a> (void)</td></tr>
+<tr class="memdesc:gaf9d13da5605d54c975070a7d0526ae0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">TimeMeter_StartMeasure 启动测量 <br /></td></tr>
+<tr class="separator:gaf9d13da5605d54c975070a7d0526ae0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa083e00c7d94263ce4f8ec5f91f035d0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__time__meter.html#gaa083e00c7d94263ce4f8ec5f91f035d0">TimeMeter_StopMeasure</a> (void)</td></tr>
+<tr class="memdesc:gaa083e00c7d94263ce4f8ec5f91f035d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">TimeMeter_StopMeasure 停止测量并返回测量值  <a href="group__time__meter.html#gaa083e00c7d94263ce4f8ec5f91f035d0">More...</a><br /></td></tr>
+<tr class="separator:gaa083e00c7d94263ce4f8ec5f91f035d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>no1wudi </dd></dl>

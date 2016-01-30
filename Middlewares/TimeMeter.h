@@ -8,9 +8,10 @@
 
 #include "stm32f4xx_hal.h"
 
+
 /*!
- * @defgroup time_meter Time Meter
- * @{
+ *@defgroup time_meter Timer Meter
+ *@{
  */
 
 /*!

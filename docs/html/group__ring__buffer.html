@@ -86,13 +86,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ga214c39ef05216d7d6b739e3046bff1ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga214c39ef05216d7d6b739e3046bff1ff"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#ga214c39ef05216d7d6b739e3046bff1ff">RING_BUFFER_ENTER_CRITICAL</a>()    &#160;&#160;&#160;__disable_irq()</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#ga214c39ef05216d7d6b739e3046bff1ff">RING_BUFFER_ENTER_CRITICAL</a>()    &#160;&#160;&#160;__asm(&quot;CPSID i&quot;)</td></tr>
 <tr class="memdesc:ga214c39ef05216d7d6b739e3046bff1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">RING_BUFFER_ENTER_CRITICAL 进入临界模式 <br /></td></tr>
 <tr class="separator:ga214c39ef05216d7d6b739e3046bff1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae52923f90d237a05b6c5680d82e74ed1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae52923f90d237a05b6c5680d82e74ed1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#gae52923f90d237a05b6c5680d82e74ed1">RING_BUFFER_EXIT_CRITICAL</a>()      &#160;&#160;&#160;__enable_irq()</td></tr>
-<tr class="memdesc:gae52923f90d237a05b6c5680d82e74ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">RING_BUFFER_EXIT_CRITICAL 退出临界模式 <br /></td></tr>
-<tr class="separator:gae52923f90d237a05b6c5680d82e74ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f062e4a7498c6eb33bd65452dcbab73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0f062e4a7498c6eb33bd65452dcbab73"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ring__buffer.html#ga0f062e4a7498c6eb33bd65452dcbab73">RING_BUFFER_EXIT_CRITICAL</a>()        &#160;&#160;&#160;__asm(&quot;CPSIE i&quot;)</td></tr>
+<tr class="memdesc:ga0f062e4a7498c6eb33bd65452dcbab73"><td class="mdescLeft">&#160;</td><td class="mdescRight">RING_BUFFER_EXIT_CRITICAL 退出临界模式 <br /></td></tr>
+<tr class="separator:ga0f062e4a7498c6eb33bd65452dcbab73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['pwminput_2ec',['PWMInput.c',['../_p_w_m_input_8c.html',1,'']]],
-  ['pwminput_2eh',['PWMInput.h',['../_p_w_m_input_8h.html',1,'']]],
-  ['pwmoutput_2ec',['PWMOutput.c',['../_p_w_m_output_8c.html',1,'']]],
-  ['pwmoutput_2eh',['PWMOutput.h',['../_p_w_m_output_8h.html',1,'']]]
+  ['mpu6050_2ec',['MPU6050.c',['../_m_p_u6050_8c.html',1,'']]],
+  ['mpu6050_2eh',['MPU6050.h',['../_m_p_u6050_8h.html',1,'']]],
+  ['ms5611_2ec',['MS5611.c',['../_m_s5611_8c.html',1,'']]],
+  ['ms5611_2eh',['MS5611.h',['../_m_s5611_8h.html',1,'']]]
 ];

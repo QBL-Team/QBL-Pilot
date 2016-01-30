@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>QBL-Pilot: E:/Works/QBL-Pilot/Drivers/Device/HMC5883.c File Reference</title>
+<title>QBL-Pilot: HMC5883驱动内部数据</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,9 +38,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -59,12 +59,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
-    </ul>
-  </div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -79,48 +74,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_60925fc218da8ca7908795bf5f624060.html">Drivers</a></li><li class="navelem"><a class="el" href="dir_435fee74c13b132f31779b54635373e5.html">Device</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">HMC5883.c File Reference</div>  </div>
+<div class="title">HMC5883驱动内部数据<div class="ingroups"><a class="el" href="group__hmc5883__driver.html">HMC5883 驱动</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_h_m_c5883_8h_source.html">HMC5883.h</a>&quot;</code><br />
-</div><table class="memberdecls">
-<tr class="memitem:ga6887196e8734d548ab7410e96ef5aed4"><td class="memItemLeft" align="right" valign="top">
+<table class="memberdecls">
+<tr class="memitem:ga3b1955c1ea4d15e35091d2c9b5fc9d45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver__private.html#ga3b1955c1ea4d15e35091d2c9b5fc9d45">HMC5883_Init</a> (I2C_HandleTypeDef *handle)</td></tr>
+<tr class="memdesc:ga3b1955c1ea4d15e35091d2c9b5fc9d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">HMC5883_Init 初始化HMC5883L.  <a href="#ga3b1955c1ea4d15e35091d2c9b5fc9d45">More...</a><br /></td></tr>
+<tr class="separator:ga3b1955c1ea4d15e35091d2c9b5fc9d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga510174357ad0bd347beb541bebf7273b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver__private.html#ga510174357ad0bd347beb541bebf7273b">HMC5883_Update</a> (float axis[3])</td></tr>
+<tr class="memdesc:ga510174357ad0bd347beb541bebf7273b"><td class="mdescLeft">&#160;</td><td class="mdescRight">HMC5883_Update 读取最新的传感器数据  <a href="#ga510174357ad0bd347beb541bebf7273b">More...</a><br /></td></tr>
+<tr class="separator:ga510174357ad0bd347beb541bebf7273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6887196e8734d548ab7410e96ef5aed4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga6887196e8734d548ab7410e96ef5aed4"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver__private.html#ga6887196e8734d548ab7410e96ef5aed4">HMC5883_IIC_ADDRESS</a>&#160;&#160;&#160;0x3C</td></tr>
 <tr class="memdesc:ga6887196e8734d548ab7410e96ef5aed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">芯片的IIC地址，参见其数据手册 <br /></td></tr>
 <tr class="separator:ga6887196e8734d548ab7410e96ef5aed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9c9589bb19e67395e4148d33fcb160e6"><td class="memItemLeft" align="right" valign="top">
+<tr class="memitem:ga9c9589bb19e67395e4148d33fcb160e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9c9589bb19e67395e4148d33fcb160e6"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver__private.html#ga9c9589bb19e67395e4148d33fcb160e6">HMC5883_DATA_SENS</a>&#160;&#160;&#160;440.0f</td></tr>
 <tr class="memdesc:ga9c9589bb19e67395e4148d33fcb160e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">原始数据到真实数据的缩放比例，参见其数据手册 <br /></td></tr>
 <tr class="separator:ga9c9589bb19e67395e4148d33fcb160e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5af6f3e1f8cb12a7d074b60f6653ee24"><td class="memItemLeft" align="right" valign="top">
+<tr class="memitem:ga5af6f3e1f8cb12a7d074b60f6653ee24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5af6f3e1f8cb12a7d074b60f6653ee24"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver__private.html#ga5af6f3e1f8cb12a7d074b60f6653ee24">HMC5883_REG_DATA_ADDR</a>&#160;&#160;&#160;0x03</td></tr>
 <tr class="memdesc:ga5af6f3e1f8cb12a7d074b60f6653ee24"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据寄存器起始地址 <br /></td></tr>
 <tr class="separator:ga5af6f3e1f8cb12a7d074b60f6653ee24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8480f1a530d25b8e4996d376d51a86d7"><td class="memItemLeft" align="right" valign="top">
+<tr class="memitem:ga8480f1a530d25b8e4996d376d51a86d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8480f1a530d25b8e4996d376d51a86d7"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver__private.html#ga8480f1a530d25b8e4996d376d51a86d7">HMC5883_REG_DATA_LENGTH</a>&#160;&#160;&#160;6</td></tr>
 <tr class="memdesc:ga8480f1a530d25b8e4996d376d51a86d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取的数据量，单位为byte <br /></td></tr>
 <tr class="separator:ga8480f1a530d25b8e4996d376d51a86d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3cc59a009a054a25e6b13ccaa227b4ea"><td class="memItemLeft" align="right" valign="top">
+<tr class="memitem:ga3cc59a009a054a25e6b13ccaa227b4ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3cc59a009a054a25e6b13ccaa227b4ea"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver__private.html#ga3cc59a009a054a25e6b13ccaa227b4ea">HMC5883_REG_ADDR_WIDTH</a>&#160;&#160;&#160;1</td></tr>
 <tr class="memdesc:ga3cc59a009a054a25e6b13ccaa227b4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">寄存器地址的宽度，单位为byte <br /></td></tr>
 <tr class="separator:ga3cc59a009a054a25e6b13ccaa227b4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3b1955c1ea4d15e35091d2c9b5fc9d45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver__private.html#ga3b1955c1ea4d15e35091d2c9b5fc9d45">HMC5883_Init</a> (I2C_HandleTypeDef *handle)</td></tr>
-<tr class="memdesc:ga3b1955c1ea4d15e35091d2c9b5fc9d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">HMC5883_Init 初始化HMC5883L.  <a href="group__hmc5883__driver__private.html#ga3b1955c1ea4d15e35091d2c9b5fc9d45">More...</a><br /></td></tr>
-<tr class="separator:ga3b1955c1ea4d15e35091d2c9b5fc9d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga510174357ad0bd347beb541bebf7273b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hmc5883__driver__private.html#ga510174357ad0bd347beb541bebf7273b">HMC5883_Update</a> (float axis[3])</td></tr>
-<tr class="memdesc:ga510174357ad0bd347beb541bebf7273b"><td class="mdescLeft">&#160;</td><td class="mdescRight">HMC5883_Update 读取最新的传感器数据  <a href="group__hmc5883__driver__private.html#ga510174357ad0bd347beb541bebf7273b">More...</a><br /></td></tr>
-<tr class="separator:ga510174357ad0bd347beb541bebf7273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>no1wudi </dd></dl>
-</div></div><!-- contents -->
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga3b1955c1ea4d15e35091d2c9b5fc9d45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HMC5883_Init </td>
+          <td>(</td>
+          <td class="paramtype">I2C_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HMC5883_Init 初始化HMC5883L. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>IIC总线的句柄，用于操作总线读写寄存器 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果初始化成功，返回true </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga510174357ad0bd347beb541bebf7273b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HMC5883_Update </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>axis</em>[3]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HMC5883_Update 读取最新的传感器数据 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">axis</td><td>数组的长度为3，数组的元素0~2分别对应X,Y,Z三个轴 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果读取成功，返回true </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

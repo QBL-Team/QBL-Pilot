@@ -25,8 +25,8 @@ function(cortex_set_tool_chain path prefix linkscript)
 
 
     #通用的编译参数
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g0 -o3 -std=c11 -flto -mthumb -mcpu=${CMAKE_SYSTEM_PROCESSOR}" PARENT_SCOPE)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g0 -o3 -std=c++11 -flto -mthumb -mcpu=${CMAKE_SYSTEM_PROCESSOR}" PARENT_SCOPE)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g0 -o3 -std=c11 -flto -mthumb -march=${CMAKE_SYSTEM_PROCESSOR}" PARENT_SCOPE)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g0 -o3 -std=c++11 -flto -mthumb -march=${CMAKE_SYSTEM_PROCESSOR}" PARENT_SCOPE)
     #Nano lib
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--gc-sections --specs=nano.specs -flto -mthumb -mabi=aapcs -T${linkscript}" PARENT_SCOPE)
     #Base lib

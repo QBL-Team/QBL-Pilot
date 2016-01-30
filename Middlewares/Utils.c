@@ -61,27 +61,27 @@ void Utils_RunSelfTest(void)
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_ACCELEROMETER,
         "Accelerometer initialize succeed !\r\n",
-        "Accelerometer initialize failed !\r\n");
+        "Accelerometer initialize failed  !\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_GYROSCOPE,
         "Gyroscope initialize succeed !\r\n",
-        "Gyroscope initialize failed !\r\n");
+        "Gyroscope initialize failed  !\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_BAROMETER,
         "Barometer initialize succeed !\r\n",
-        "Barometer initialize failed !\r\n");
+        "Barometer initialize failed  !\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_MAGNETICMETER,
         "Magneticmeter initialize succeed !\r\n",
-        "Magneticmeter initialize failed !\r\n");
+        "Magneticmeter initialize failed  !\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_FLASH,
         "Flash initialize succeed !\r\n",
-        "Flash initialize failed !\r\n");
+        "Flash initialize failed  !\r\n");
 
     Utils_SystemInitCheck(UTILS_SYSTEM_DEVICE_SDCARD,
         "SDCard initialize succeed !\r\n",
-        "SDCard initialize failed !\r\n");
+        "SDCard initialize failed  !\r\n");
 
     printf("\r\nNow sensor reading check...\r\n");
 

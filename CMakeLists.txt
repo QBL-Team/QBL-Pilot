@@ -5,12 +5,12 @@ enable_language(C)
 enable_language(ASM)
 
 set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_SYSTEM_PROCESSOR cortex-m4)
+set(CMAKE_SYSTEM_PROCESSOR armv7e-m)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/Build)
 
 include(CortexM.CMake)
 
-set(cortex_tool_root "D:\\Develop\\GCC4_ARM\\")
+set(cortex_tool_root "D:\\Develop\\GCC5_ARM\\")
 
 cortex_set_tool_chain(
     ${cortex_tool_root}

@@ -7,9 +7,14 @@
 
 /*!
   *
-  * @defgroup hmc5883_driver HMC5883 驱动
+  * @ingroup hmc5883_driver
   * @{
   */
+
+/*!
+ * @defgroup hmc5883_driver_private HMC5883驱动内部数据
+ * @{
+ */
 
 
 #define HMC5883_IIC_ADDRESS     0x3C        ///< 芯片的IIC地址，参见其数据手册
@@ -35,11 +40,6 @@ static const uint8_t HMC5883_CONFIG_TABLE[] =
  */
 static I2C_HandleTypeDef * iic_handle = NULL;
 
-/*!
- * \brief HMC5883_Init  初始化HMC5883L
- * \param handle    IIC总线的句柄，用于操作总线读写寄存器
- * \return  如果初始化成功，返回true
- */
 
 bool HMC5883_Init(I2C_HandleTypeDef * handle)
 {
@@ -62,12 +62,6 @@ bool HMC5883_Init(I2C_HandleTypeDef * handle)
     return true;
 }
 
-/*!
- * \brief HMC5883_Update 读取最新的传感器数据
- * \param axis 数组的长度为3，数组的元素0~2分别对应X,Y,Z三个轴
- * \return 如果读取成功，返回true
- */
-
 bool HMC5883_Update(float axis[3])
 {
     uint8_t tmp[6];
@@ -86,6 +80,11 @@ bool HMC5883_Update(float axis[3])
 
     return true;
 }
+
+/*!
+ * @}
+ */
+
 
 /*!
  * @}
