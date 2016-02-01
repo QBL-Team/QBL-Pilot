@@ -691,6 +691,11 @@
               <FileType>1</FileType>
               <FilePath>..\Middlewares\Utils.c</FilePath>
             </File>
+            <File>
+              <FileName>DataRecorder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\DataRecorder.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

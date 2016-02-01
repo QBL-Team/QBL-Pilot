@@ -5,7 +5,7 @@ enable_language(C)
 enable_language(ASM)
 
 set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_SYSTEM_PROCESSOR armv7e-m)
+set(CMAKE_SYSTEM_PROCESSOR cortex-m4)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/Build)
 
 include(CortexM.CMake)
@@ -19,7 +19,6 @@ cortex_set_tool_chain(
     )
 
 cortex_enable_fpu()
-
 
 include_directories(Inc)
 include_directories(Src)
@@ -44,7 +43,6 @@ aux_source_directory(Drivers/STM32F4xx_HAL_Driver/Src SOURCE_FILES)
 aux_source_directory(Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates SOURCE_FILES)
 aux_source_directory(Middlewares/Third_Party/FatFs/Src SOURCE_FILES)
 aux_source_directory(Middlewares/Third_Party/FatFs/Src/drivers SOURCE_FILES)
-
 
 set(SOURCE_FILES
     GNU-GCC/startup_stm32f407xx.s

@@ -42,7 +42,14 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 #include "Utils.h"
+#include "DataRecorder.h"
+#include "mavlink.h"
+#include "MPU6050.h"
+#include "LED.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -82,6 +89,7 @@ int main(void)
 {
 
     /* USER CODE BEGIN 1 */
+
     /* USER CODE END 1 */
 
     /* MCU Configuration----------------------------------------------------------*/
@@ -111,14 +119,13 @@ int main(void)
 
     Utils_SystemInit();
     //运行系统自测功能，请连接串口，按照串口输出的提示来进行操作
-//    Utils_RunSelfTest();
+    //Utils_RunSelfTest();
+
 
     /* USER CODE END 2 */
-
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
     while (1) {
-
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */
