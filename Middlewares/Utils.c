@@ -89,9 +89,9 @@ void Utils_RunSelfTest(void)
 
     if (MPU6050_Update(tmp, &tmp[6])) {
         printf("Accelerometer reading ok...\r\n");
-        printf("ax = %f,ay = %f,az = %f\r\n", tmp[0], tmp[1], tmp[2]);
+        printf("ax = %d,ay = %d,az = %d\r\n", (int)(100 * tmp[0]), (int)(100 * tmp[1]), (int)(100 * tmp[2]));
         printf("Gyroscope reading ok...\r\n");
-        printf("gx = %f,gy = %f,gz = %f\r\n", tmp[3], tmp[4], tmp[5]);
+        printf("gx = %d,gy = %d,gz = %d\r\n", (int)(100 * tmp[3]), (int)(100 * tmp[4]), (int)(100 * tmp[5]));
     }
     else {
         printf("Accelerometer reading failed...\r\n");
@@ -100,7 +100,7 @@ void Utils_RunSelfTest(void)
 
     if (HMC5883_Update(tmp)) {
         printf("Magneticmeter reading ok...\r\n");
-        printf("mx = %f,my = %f,mz = %f\r\n", tmp[0], tmp[1], tmp[2]);
+        printf("mx = %d,my = %d,mz = %d\r\n", (int)(100 * tmp[0]), (int)(100 * tmp[1]), (int)(100 * tmp[2]));
     }
     else {
         printf("Magneticmeter reading failed...\r\n");
@@ -111,7 +111,7 @@ void Utils_RunSelfTest(void)
     for (;;) {
         if (MS5611_Update(&tmp[0], &tmp[1])) {
             printf("Barometer reading ok...\r\n");
-            printf("Pressure = %f,Temperature = %f\r\n", tmp[0], tmp[1]);
+            printf("Pressure = %d,Temperature = %d\r\n",(int)(100 *  tmp[0]), (int)(100 * tmp[1]));
             break;
         }
 

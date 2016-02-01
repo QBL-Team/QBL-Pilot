@@ -9,10 +9,11 @@
 #include <stdint.h>
 
 // Macro to define packed structures
-
-#define MAVPACKED( __Declaration__ )    __attribute__((packed))  __Declaration__
-                                             
-
+#ifdef __GNUC__
+  #define MAVPACKED( __Declaration__ ) __Declaration__ __attribute__((packed))
+#else
+  #define MAVPACKED( __Declaration__ )  __attribute__((packed))  __Declaration__
+#endif
 
 #ifndef MAVLINK_MAX_PAYLOAD_LEN
 // it is possible to override this, but be careful!
@@ -49,11 +50,12 @@
  * and re-instanted on the receiving side using the
  * native type as well.
  */
-
+#ifndef __GNUC__
 #pragma anon_unions
+#endif
 MAVPACKED(
 typedef struct param_union {
-	 union {
+	union {
 		float param_float;
 		int32_t param_int32;
 		uint32_t param_uint32;

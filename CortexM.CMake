@@ -15,7 +15,6 @@ function(cortex_set_tool_chain path prefix linkscript)
     set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY PARENT_SCOPE)
     set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY PARENT_SCOPE)
 
-
     set(CMAKE_C_LINK_EXECUTABLE "<CMAKE_C_COMPILER> <LINK_FLAGS> -o <TARGET> <OBJECTS>" PARENT_SCOPE)
     set(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_CXX_COMPILER> <LINK_FLAGS> -o <TARGET> <OBJECTS>" PARENT_SCOPE)
 
@@ -23,22 +22,20 @@ function(cortex_set_tool_chain path prefix linkscript)
     message("Compiler's path    :${path} ")
     message("Compiler's prefix  :${prefix}")
 
-
     #通用的编译参数
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g0 -o3 -std=c11 -flto -mthumb -march=${CMAKE_SYSTEM_PROCESSOR}" PARENT_SCOPE)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g0 -o3 -std=c++11 -flto -mthumb -march=${CMAKE_SYSTEM_PROCESSOR}" PARENT_SCOPE)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g0 -Os -flto -std=c11 -mthumb -mcpu=${CMAKE_SYSTEM_PROCESSOR}" PARENT_SCOPE)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g0 -Os -flto -std=c++11 -mthumb -mcpu=${CMAKE_SYSTEM_PROCESSOR}" PARENT_SCOPE)
     #Nano lib
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--gc-sections --specs=nano.specs -flto -mthumb -mabi=aapcs -T${linkscript}" PARENT_SCOPE)
-    #Base lib
-#    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--gc-sections -lgcc -lm -lc -flto -mthumb -mabi=aapcs -T${linkscript}" PARENT_SCOPE)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--gc-sections -flto --specs=nano.specs -mthumb -mabi=aapcs -mcpu=${CMAKE_SYSTEM_PROCESSOR} -T${linkscript}" PARENT_SCOPE)
 
 endfunction()
 
 function(cortex_enable_fpu)
     if(CMAKE_SYSTEM_PROCESSOR MATCHES cortex-m4)
         message("Target's FPU enabled !")
-        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfpu=fpv4-sp-d16 -mfloat-abi=softfp" PARENT_SCOPE)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mfpu=fpv4-sp-d16 -mfloat-abi=softfp" PARENT_SCOPE)
+        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfpu=fpv4-sp-d16 -mfloat-abi=hard" PARENT_SCOPE)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mfpu=fpv4-sp-d16 -mfloat-abi=hard" PARENT_SCOPE)
+        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -mfpu=fpv4-sp-d16 -mfloat-abi=hard" PARENT_SCOPE)
     endif()
 endfunction()
 
