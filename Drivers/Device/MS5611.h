@@ -11,7 +11,32 @@
 #include <stddef.h>
 #include <stdint.h>
 
+/*!
+  *
+  * @defgroup ms5611_driver MS5611 驱动
+  * @{
+  */
+
+
+/*!
+ * \brief MS5611_Init 初始化传感器，并读取出厂预设值，为计算做准备
+ * \param handle    挂载传感器的SPI总线的地址
+ * \return  如果初始化成功，返回true
+ */
+
 extern bool MS5611_Init(SPI_HandleTypeDef * handle);
+
+/*!
+ * \brief MS5611_Update 尝试读取最新的气压和温度数据
+ * \param Pressure  气压值的指针
+ * \param Temperature   温度值的指针
+ * \return  仅当返回true时读取到的数据有效，请务必检查返回值
+ */
+
 extern bool MS5611_Update(float * Pressure,float * Temperature);
+
+/*!
+ * @}
+ */
 
 #endif
