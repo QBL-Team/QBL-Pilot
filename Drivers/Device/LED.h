@@ -3,7 +3,6 @@
  *\author no1wudi
  */
 
-
 #ifndef __LED_H
 #define __LED_H
 
@@ -20,16 +19,22 @@
  * 颜色描述符
  */
 
-enum LED_COLOR{
-    LED_COLOR_OFF = 0,          /**< 关闭显示 */
-    LED_COLOR_WHITE = 1,        /**< 显示白色 */
-    LED_COLOR_RED = 2,          /**< 显示红色 */
-    LED_COLOR_GREEN = 3,        /**< 显示绿色 */
-    LED_COLOR_BLUE = 4,         /**< 显示蓝色 */
-    LED_COLOR_FUCHSIN = 5,      /**< 显示品红 */
-    LED_COLOR_YELLOW = 6,       /**< 显示黄色 */
-    LED_COLOR_CYAN = 7,         /**< 显示青色 */
+enum LED_COLOR {
+    LED_COLOR_OFF = 0, /**< 关闭显示 */
+    LED_COLOR_WHITE = 1, /**< 显示白色 */
+    LED_COLOR_RED = 2, /**< 显示红色 */
+    LED_COLOR_GREEN = 3, /**< 显示绿色 */
+    LED_COLOR_BLUE = 4, /**< 显示蓝色 */
+    LED_COLOR_FUCHSIN = 5, /**< 显示品红 */
+    LED_COLOR_YELLOW = 6, /**< 显示黄色 */
+    LED_COLOR_CYAN = 7, /**< 显示青色 */
 };
+
+/**
+ * @brief LED_Show 驱动LED显示颜色
+ * @param LED_COLOR 将要显示的颜色
+ * @see LED_COLOR
+ */
 
 extern void LED_Show(uint8_t LED_COLOR);
 

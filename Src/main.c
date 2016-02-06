@@ -121,7 +121,6 @@ int main(void)
     //运行系统自测功能，请连接串口，按照串口输出的提示来进行操作
     //Utils_RunSelfTest();
 
-
     /* USER CODE END 2 */
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
