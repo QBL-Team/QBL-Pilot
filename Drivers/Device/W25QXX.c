@@ -7,7 +7,7 @@
 
 /*!
   *
-  * @defgroup w25qxx_driver W25QXX 驱动
+  * @ingroup w25qxx_driver W25QXX 驱动
   * @{
   */
 

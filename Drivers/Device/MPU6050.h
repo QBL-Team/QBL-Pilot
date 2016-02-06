@@ -12,7 +12,37 @@
 #include <stddef.h>
 #include <stdint.h>
 
+
+/*!
+  *
+  * @defgroup mpu6050_driver MPU6050 驱动
+  * @{
+  */
+
+
+/*!
+ * \brief MPU6050_Init 初始化传感器
+ * \param handle    挂载传感器的IIC总线的句柄
+ * \return  如果初始化成功，返回true
+ */
+
+
 extern bool MPU6050_Init(I2C_HandleTypeDef * handle);
+
+
+
+/*!
+ * \brief MPU6050_Update    从传感器中读取最新的数据
+ * \param axis  本数组长度为6，元素0~2对应于加速度计的X,Y,Z三个轴；元素3~5对应于陀螺仪的X,Y,Z三个轴
+ * \param temp 读取传感器的温度，如果不需要，将本参数设置为NULL
+ * \return  如果初始化成功，返回true
+ */
+
+
 extern bool MPU6050_Update(float axis[6],float * temp);
+
+/*!
+ * @}
+ */
 
 #endif
